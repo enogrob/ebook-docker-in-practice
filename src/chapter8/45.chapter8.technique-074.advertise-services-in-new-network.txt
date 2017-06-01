@@ -1,0 +1,12 @@
+$ docker run -it -d --name c1 ubuntu:14.04.2 bash
+87c67f4fb376f559976e4a975e3661148d622ae635fae4695747170c00513165
+$ docker service publish c1service.mynet
+ed190f2cc0887ac87e1024ebb425f653989582942ab25a341e3d3e2a980475f5
+$ docker service attach c1 c1service.mynet
+$ docker run -it -d --name c2 \
+--publish-service=c2service.mynet ubuntu:14.04.2 bash
+0ee74a3e3444f27df9c2aa973a156f2827bcdd0852c6fd4ecfd5b152846dea5b
+$ docker service ls --network mynet
+SERVICE ID      NAME          NETWORK    CONTAINER
+ed190f2cc088    c1service     mynet      87c67f4fb376
+21aef543af70    c2service     mynet      0ee74a3e3444

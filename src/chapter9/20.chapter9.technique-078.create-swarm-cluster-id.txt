@@ -1,0 +1,4 @@
+h1 $ docker pull swarm
+h1 $ docker run swarm create
+126400c309dbd1405cd7218ed3f1a25e
+h1 $ CLUSTER_ID=126400c309dbd1405cd7218ed3f1a25e

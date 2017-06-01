@@ -1,0 +1,2 @@
+$ docker run -ti busybox /bin/bash
+exec: "/bin/bash": stat /bin/bash: no such file or directory2015/02/23 09:55:38 Error response from daemon: Cannot start container 73f45e34145647cd1996ae29d8028e7b06d514d0d32dec9a68ce9428446faa19: exec: "/bin/bash": stat /bin/bash: no such file or directory

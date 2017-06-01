@@ -1,0 +1,6 @@
+$ etcdctl rm /app/upstream/py1
+
+$ etcdctl ls /app/upstream
+/app/upstream/py2
+$ docker rm -f py1
+py1

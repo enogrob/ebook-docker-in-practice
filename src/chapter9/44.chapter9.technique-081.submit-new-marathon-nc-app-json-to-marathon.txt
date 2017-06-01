@@ -1,0 +1,13 @@
+$ curl -X POST -H 'Content-Type: application/json; charset=utf-8' \
+--data-binary @newapp.json http://localhost:8080/v2/apps
+{"id":"/marathon-nc", "cmd":"echo \"hello $MESOS_TASK_ID\" | nc -l $PORT0",[...]
+$ sleep 10
+$ docker ps --since=marathon
+CONTAINER ID  IMAGE         COMMAND              CREATED             STATUS             PORTS                   NAMES
+284ced88246c  ubuntu:14.04  "\"/bin/sh -c 'echo  About a minute ago  Up About a minute  0.0.0.0:8000->8000/tcp  mesos- 1da85151-59c0-4469-9c50-2bfc34f1a987
+$ curl localhost:8000
+hello mesos-nc.675b2dc9-1f88-11e5-bc4d-0242ac11000e
+$ docker ps --since=marathon
+CONTAINER ID  IMAGE         COMMAND              CREATED         STATUS                     PORTS                   NAMES
+851279a9292f  ubuntu:14.04  "\"/bin/sh -c 'echo  44 seconds ago  Up 43 seconds              0.0.0.0:8000->8000/tcp  mesos- 37d84e5e-3908-405b-aa04-9524b59ba4f6
+284ced88246c  ubuntu:14.04  "\"/bin/sh -c 'echo  24 minutes ago  Exited (0) 45 seconds ago                          mesos-1da85151-59c0-4469-9c50-2bfc34f1a987

@@ -1,0 +1,4 @@
+host2$ curl http://ip-addr.es
+1.2.3.5
+host2# sudo weave launch 1.2.3.4
+host2# C=$(sudo weave run 10.0.1.2/24 -t -i ubuntu)

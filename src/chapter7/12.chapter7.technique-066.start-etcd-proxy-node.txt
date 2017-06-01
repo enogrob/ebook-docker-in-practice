@@ -1,0 +1,9 @@
+$ docker run -d -p 8080:8080 --restart always --name etcd-proxy $IMG \
+    -proxy on -listen-client-urls http://0.0.0.0:8080 \
+    -initial-cluster $CLUSTER
+037c3c3dba04826a76c1d4506c922267885edbfa690e3de6188ac6b6380717ef
+$ curl -L $HTTPIP:8080/v2/keys/mykey2 -XPUT -d value="t"
+{"action":"set","node": {"key":"/mykey2","value":"t","modifiedIndex":12,"createdIndex":12}}
+$ docker kill etcd1 etcd2
+$ curl -L $HTTPIP:8080/v2/keys/mykey2
+{"action":"get","node": {"key":"/mykey2","value":"t","modifiedIndex":12,"createdIndex":12}}

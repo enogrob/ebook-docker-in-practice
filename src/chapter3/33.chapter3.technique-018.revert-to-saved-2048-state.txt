@@ -1,0 +1,2 @@
+$ docker rm -f win2048
+$ docker run -d -p 5901:5901 -p 6080:6080 --name win2048 my2048tag:$mytag

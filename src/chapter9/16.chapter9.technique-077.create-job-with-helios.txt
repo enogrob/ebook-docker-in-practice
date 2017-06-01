@@ -1,0 +1,8 @@
+$ helios create -p nc=8080:8080 netcat:v1 ubuntu:14.04.2 -- \
+sh -c 'echo hello | nc -l 8080'
+Creating job: {"command":["sh","-c","echo hello | nc -l 8080"], "creatingUser":null,"env":{},"expires":null,"gracePeriod":null, "healthCheck":null,"id": "netcat:v1:2067d43fc2c6f004ea27d7bb7412aff502e3cdac", "image":"ubuntu:14.04.2","ports":{"nc":{"externalPort":8080, "internalPort":8080,"protocol":"tcp"}},"registration":{}, "registrationDomain":"","resources":null,"token":"","volumes":{}}
+Done.
+netcat:v1:2067d43fc2c6f004ea27d7bb7412aff502e3cdac
+$ helios jobs
+JOB ID            NAME   VERSION HOSTS COMMAND                  ENVIRONMENT
+netcat:v1:2067d43 netcat v1      0     sh -c "echo hello | nc -l 8080"

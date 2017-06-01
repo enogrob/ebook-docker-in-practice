@@ -1,0 +1,13 @@
+root@ef351febcee4:/# apt-get install -y python2.7 python-pip firefox
+[...]
+root@ef351febcee4:/# pip install selenium
+Downloading/unpacking selenium==2.47.3
+[...]
+Successfully installed selenium==2.47.3
+Cleaning up...
+root@ef351febcee4:/# python
+Python 2.7.6 (default, Mar 22 2014, 22:59:56)
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from selenium import webdriver
+>>> b = webdriver.Firefox()

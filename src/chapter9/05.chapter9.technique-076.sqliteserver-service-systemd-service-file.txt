@@ -1,0 +1,24 @@
+[Unit]
+Description=SQLite Docker Server
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+ExecStartPre=-/bin/touch /tmp/sqlitedbs/test
+ExecStartPre=-/bin/touch /tmp/sqlitedbs/live
+ExecStartPre=/bin/bash \
+-c '/usr/bin/docker kill sqliteserver || /bin/true'
+ExecStartPre=/bin/bash \
+-c '/usr/bin/docker rm -f sqliteserver || /bin/true'
+ExecStartPre=/usr/bin/docker \
+pull dockerinpractice/docker-compose-sqlite
+ExecStart=/usr/bin/docker run --name sqliteserver \
+-v /tmp/sqlitedbs/test:/opt/sqlite/db \
+dockerinpractice/docker-compose-sqlite /bin/bash -c \
+'socat TCP-L:12345,fork,reuseaddr \
+EXEC:"sqlite3 /opt/sqlite/db",pty'
+ExecStop=/usr/bin/docker rm -f sqliteserver
+
+[Install]
+WantedBy=multi-user.target

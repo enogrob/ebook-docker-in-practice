@@ -1,0 +1,9 @@
+$ mkdir chef_example
+$ cd chef_example
+$ touch attributes.json
+$ touch config.rb
+$ touch Dockerfile
+$ mkdir -p cookbooks/mysite/recipes
+$ touch cookbooks/mysite/recipes/default.rb
+$ mkdir -p cookbooks/mysite/templates/default
+$ touch cookbooks/mysite/templates/default/message.erb

@@ -1,0 +1,8 @@
+class TestScheduler(mesos.interface.Scheduler):
+[...]
+    def registered(self, driver, frameworkId, masterInfo):
+[...]
+    def statusUpdate(self, driver, update):
+[...]
+    def resourceOffers(self, driver, offers):
+[...]

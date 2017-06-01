@@ -1,0 +1,21 @@
+c2 $ EXTIP1=192.168.1.87
+c2 $ dig @$EXTIP1 files.service.consul +short
+192.168.1.80
+c2 $ BRIDGEIP=172.17.42.1
+c2 $ dig @$BRIDGEIP files.service.consul +short
+192.168.1.80
+c2 $ dig @$BRIDGEIP files.service.consul srv +short
+1 1 8000 mylaptop2.node.dc1.consul.
+c2 $ docker run -it --dns $BRIDGEIP ubuntu:14.04.2 bash
+root@934e9c26bc7e:/# ping -c1 -q www.google.com
+PING www.google.com (216.58.210.4) 56(84) bytes of data.
+
+--- www.google.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 25.358/25.358/25.358/0.000 ms
+root@934e9c26bc7e:/# ping -c1 -q files.service.consul
+PING files.service.consul (192.168.1.80) 56(84) bytes of data.
+
+--- files.service.consul ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.062/0.062/0.062/0.000 ms

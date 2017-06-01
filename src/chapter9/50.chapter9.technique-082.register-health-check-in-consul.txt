@@ -1,0 +1,42 @@
+c2 $ cat >check <<'EOF'
+#!/bin/sh
+set -o errexit
+set -o pipefail
+
+SVC_ID="$1"
+SVC_PORT=\
+"$(wget -qO - 172.17.42.1:8500/v1/agent/services | jq ".$SVC_ID.Port")"
+wget -qsO - "localhost:$SVC_PORT"
+echo "Success!"
+EOF
+c2 $ cat check | docker exec -i consul-client sh -c \
+'cat > /check && chmod +x /check'
+c2 $ cat >health.json <<'EOF'
+{
+  "Name": "filescheck",
+  "ServiceID": "files",
+  "Script": "/check files",
+  "Interval": "10s"
+}
+EOF
+c2 $ curl -X PUT --data-binary @health.json \
+172.17.42.1:8500/v1/agent/check/register
+c2 $ sleep 300
+c2 $ curl -sSL 172.17.42.1:8500/v1/health/service/files | \
+python -m json.tool | head -n 13
+[
+    {
+        "Checks": [
+            {
+                "CheckID": "filescheck",
+                "Name": "filescheck",
+                "Node": "mylaptop2",
+                "Notes": "",
+                "Output": "/check: line 6: jq: not \
+found\nConnecting to 172.17.42.1:8500 (172.17.42.1:8500)\n",
+                "ServiceID": "files",
+                "ServiceName": "files",
+                "Status": "critical"
+            },
+c2 $ dig @$BRIDGEIP files.service.consul srv +short
+c2 $

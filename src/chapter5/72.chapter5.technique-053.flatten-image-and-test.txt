@@ -1,0 +1,11 @@
+$ ID=$(docker export reduce | docker import -)
+$ docker tag $ID smaller
+$ docker images | grep smaller
+smaller  latest  2af3bde3836a  18 minutes ago  6.378 MB
+$ mkdir -p /tmp/tmp
+$ touch /tmp/tmp/a.log
+$ docker run -v /tmp/tmp:/log_dir smaller \
+/usr/bin/clean_log 0 
+Cleaning logs over 0 days old
+$ ls /tmp/tmp/a.log
+ls: cannot access /tmp/tmp/a.log: No such file or directory

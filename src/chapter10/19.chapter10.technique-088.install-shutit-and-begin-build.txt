@@ -1,0 +1,9 @@
+sudo su -
+apt-get install -y git python-pip docker.io || \
+yum install -y git python-pip docker.io
+pip install shutit
+git clone https://github.com/ianmiell/docker-selinux.git
+cd docker-selinux
+shutit build --delivery bash \
+-s io.dockerinpractice.docker_selinux.docker_selinux \
+  compile_policy no

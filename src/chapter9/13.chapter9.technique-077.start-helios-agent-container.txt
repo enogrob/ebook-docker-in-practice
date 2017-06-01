@@ -1,0 +1,9 @@
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock -d --name hagent \
+dockerinpractice/docker-helios helios-agent --zk 172.17.0.9
+5a4abcb271070d0171ca809ff2beafac5798e86131b72aeb201fe27df64b2698
+$ docker logs --tail=3 hagent
+03:30:53.344 helios[1]: INFO  [AgentService STARTING] ContextHandler: Started i.d.j.MutableServletContextHandler@774c71b1{/,null,AVAILABLE}
+03:30:53.375 helios[1]: INFO  [AgentService STARTING] ServerConnector: Started application@7d9e6c27{HTTP/1.1}{0.0.0.0:5803}
+03:30:53.376 helios[1]: INFO  [AgentService STARTING] ServerConnector: Started admin@2bceb4df{HTTP/1.1}{0.0.0.0:5804}
+$ docker inspect -f '{{.NetworkSettings.IPAddress}}' hagent
+172.17.0.12

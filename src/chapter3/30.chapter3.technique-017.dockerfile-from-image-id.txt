@@ -1,0 +1,5 @@
+FROM 8eaa4ff06b53
+RUN echo "Built from image id:" > /etc/buildinfo
+RUN echo "8eaa4ff06b53" >> /etc/buildinfo
+RUN echo "an ubuntu 14.4.01 image" >> /etc/buildinfo
+CMD ["echo","/etc/buildinfo"]

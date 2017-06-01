@@ -1,0 +1,5 @@
+$ docker run -t -i node /bin/bash
+root@c267ae999646:/# node
+> process.version
+'v0.12.0'
+>

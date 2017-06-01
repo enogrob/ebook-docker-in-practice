@@ -1,0 +1,2 @@
+app1: base
+    cd repos/app1 && docker build -t corp/app1 .

@@ -1,0 +1,13 @@
+>>> b.get('http://github.com')
+>>> searchselector = '.js-site-search-form input[type="text"]'
+>>> searchbox = b.find_element_by_css_selector(searchselector)
+>>> searchbox.send_keys('docker-in-practice\n')
+>>> usersxpath = '//nav//a[contains(text(), "Users")]'
+>>> userslink = b.find_element_by_xpath(usersxpath)
+>>> userslink.click()
+>>> dlinkselector = '.user-list-info a'
+>>> dlink = b.find_elements_by_css_selector(dlinkselector)[0]
+>>> dlink.click()
+>>> mlinkselector = '.org-header a.meta-link'
+>>> mlink = b.find_element_by_css_selector(mlinkselector)
+>>> mlink.click()

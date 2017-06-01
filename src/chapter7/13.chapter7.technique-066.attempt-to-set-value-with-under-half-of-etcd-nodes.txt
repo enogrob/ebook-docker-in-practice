@@ -1,0 +1,6 @@
+$ curl -L $HTTPIP:8080/v2/keys/mykey3 -XPUT -d value="t"
+{"message":"proxy: unable to get response from 3 endpoint(s)"}
+$ docker start etcd2
+etcd2
+$ curl -L $HTTPIP:8080/v2/keys/mykey3 -XPUT -d value="t"
+{"action":"set","node": {"key":"/mykey3","value":"t","modifiedIndex":16,"createdIndex":16}}

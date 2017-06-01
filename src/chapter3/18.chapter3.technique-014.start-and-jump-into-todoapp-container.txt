@@ -1,0 +1,3 @@
+$ docker run -d -p 8000:8000 --name todobug1 dockerinpractice/todoapp
+3c3d5d3ffd70d17e7e47e90801af7d12d6fc0b8b14a8b33131fc708423ee4372
+$ docker exec -i -t todobug1 /bin/bash

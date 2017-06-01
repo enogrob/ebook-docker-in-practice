@@ -1,0 +1,9 @@
+$ helios hosts
+HOST         STATUS        DEPLOYED RUNNING CPUS MEM  LOAD AVG MEM USAGE OS                      HELIOS  DOCKER
+5a4abcb27107.Up 19 minutes 0        0       4    7 gb 0.61     0.84      Linux 3.13.0-46-generic 0.8.213 1.3.1 (1.15)
+$ helios deploy netcat:v1 5a4abcb27107
+Deploying Deployment{jobId=netcat:v1: 2067d43fc2c6f004ea27d7bb7412aff502e3cdac, goal=START, deployerUser=null} on [5a4abcb27107]
+5a4abcb27107: done
+$ helios status
+JOB ID            HOST         GOAL  STATE   CONTAINER ID PORTS
+netcat:v1:2067d43 5a4abcb27107.START RUNNING b1225bc      nc=8080:8080

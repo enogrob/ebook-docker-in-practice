@@ -1,0 +1,2 @@
+docker run --name echo-server -d server
+docker run --rm --name client --link echo-server:talkto client

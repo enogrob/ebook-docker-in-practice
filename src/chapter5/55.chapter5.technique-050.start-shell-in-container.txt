@@ -1,0 +1,2 @@
+docker run -ti --name smaller --entrypoint /bin/bash \
+dockerinpractice/log-cleaner

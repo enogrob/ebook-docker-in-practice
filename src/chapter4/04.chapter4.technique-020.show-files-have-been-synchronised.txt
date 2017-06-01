@@ -1,0 +1,2 @@
+[host1]$ ls /data
+shared_from_server_one  shared_from_server_two

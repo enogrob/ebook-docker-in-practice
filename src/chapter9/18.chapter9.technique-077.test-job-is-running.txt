@@ -1,0 +1,5 @@
+$ curl localhost:8080
+hello
+$ helios status
+JOB ID            HOST         GOAL  STATE         CONTAINER ID PORTS
+netcat:v1:2067d43 5a4abcb27107.START PULLING_IMAGE b1225bc      nc=8080:8080

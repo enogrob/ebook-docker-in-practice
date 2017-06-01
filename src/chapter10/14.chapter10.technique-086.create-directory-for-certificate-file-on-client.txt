@@ -1,0 +1,2 @@
+user@client:~$ sudo su
+root@client:~$ mkdir -p /etc/docker

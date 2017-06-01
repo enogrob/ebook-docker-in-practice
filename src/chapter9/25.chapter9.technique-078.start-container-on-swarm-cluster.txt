@@ -1,0 +1,9 @@
+h2 $ docker -H tcp://10.194.12.221:4000 run -d ubuntu:14.04.2 sleep 60
+0747c14774c70bad00bd7e2bcbf583d756ffe6d61459ca920887894b33734d3a
+h2 $ docker -H tcp://localhost:4000 ps
+CONTAINER ID  IMAGE         COMMAND   CREATED         STATUS                 PORTS     NAMES
+0747c14774c7  ubuntu:14.04  sleep 60  19 seconds ago  Up Less than a second            h1/serene_poitras
+h2 $ docker -H tcp://10.194.12.221:4000 info | grep Containers
+Containers: 4
+  └ Containers: 1
+  └ Containers: 3

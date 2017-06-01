@@ -1,0 +1,15 @@
+$ docker run -it --name c1 ubuntu:14.04.2 bash
+root@0749a2e74a68:/# apt-get update && apt-get install -y wget
+[...]
+root@0749a2e74a68:/# ping -q -c 5 www.docker.com
+PING www.docker.com (104.239.220.248) 56(84) bytes of data.
+
+--- www.docker.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 98.546/101.272/106.424/2.880 ms
+root@0749a2e74a68:/# time wget -o /dev/null https://www.docker.com
+
+real    0m0.680s
+user    0m0.012s
+sys     0m0.006s
+root@0749a2e74a68:/#

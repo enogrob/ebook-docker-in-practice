@@ -1,0 +1,22 @@
+$ docker run -d --name offlinetest ubuntu:14.04.2 sleep infinity
+fad037a77a2fc337b7b12bc484babb2145774fde7718d1b5b53fb7e9dc0ad7b3
+$ docker exec offlinetest ping -q -c1 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 2.966/2.966/2.966/0.000 ms
+$ docker exec offlinetest ifconfig eth0 down
+SIOCSIFFLAGS: Operation not permitted
+$ PID=$(docker inspect --format {{.State.Pid}} offlinetest)
+$ nsenter --target $PID --net ethtool -S eth0
+NIC statistics:
+     peer_ifindex: 53
+$ ip addr | grep '^53'
+53: veth2e7d114: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP
+$ sudo ifconfig veth2e7d114 down
+$ docker exec offlinetest ping -q -c1 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms

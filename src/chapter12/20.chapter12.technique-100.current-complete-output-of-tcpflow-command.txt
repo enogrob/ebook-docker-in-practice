@@ -1,0 +1,20 @@
+$ tcpflow -J -c -i docker0 'host 172.17.0.1 and (src or dst port 80)'
+tcpflow: listening on docker0
+172.017.000.001.36042-093.184.216.034.00080: GET / HTTP/1.1
+Host: www.example.com
+User-Agent: Wget
+Connection: close
+
+
+093.184.216.034.00080-172.017.000.001.36042: HTTP/1.0 200 OK
+Accept-Ranges: bytes
+Cache-Control: max-age=604800
+Content-Type: text/html
+Date: Mon, 17 Aug 2015 12:22:21 GMT
+[...]
+
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+[...]

@@ -1,0 +1,1 @@
+git clone https://github.com/docker-in-practice/docker-chef-solo-example.git

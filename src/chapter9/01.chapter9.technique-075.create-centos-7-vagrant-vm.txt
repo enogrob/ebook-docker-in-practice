@@ -1,0 +1,5 @@
+$ mkdir centos7_docker
+$ cd centos7_docker
+$ vagrant init jdiprizio/centos-docker-io
+$ vagrant up
+$ vagrant ssh

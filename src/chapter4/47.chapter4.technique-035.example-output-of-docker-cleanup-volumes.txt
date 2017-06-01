@@ -1,0 +1,12 @@
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /var/lib/docker:/var/lib/docker --privileged 951acdb777bf
+
+Delete unused volume directories from /var/lib/docker/volumes
+Deleting 659cfdc5d394ec7ad5942862ba5feb1d24c9f67ca314462207835ef5bf657131
+In use 6ae01c5524267c8f01f1d1e83933b494fdb5c709d9468122b470bfcdd5a5b03d
+Deleting 73260d192a0a4d0ebc3606d9daf7137ab220e41cbbfe919ef1dded01a2f37b29
+
+Delete unused volume directories from /var/lib/docker/vfs/dir
+Deleting 659cfdc5d394ec7ad5942862ba5feb1d24c9f67ca314462207835ef5bf657131
+In use 6ae01c5524267c8f01f1d1e83933b494fdb5c709d9468122b470bfcdd5a5b03d
+Deleting 73260d192a0a4d0ebc3606d9daf7137ab220e41cbbfe919ef1dded01a2f37b29

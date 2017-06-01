@@ -1,0 +1,18 @@
+[Unit]
+Description=SQLite Docker Proxy
+After=sqliteserver.service
+Requires=sqliteserver.service
+
+[Service]
+Restart=always
+ExecStartPre=/bin/bash -c '/usr/bin/docker kill sqliteproxy || /bin/true'
+ExecStartPre=/bin/bash -c '/usr/bin/docker rm -f sqliteproxy || /bin/true'
+ExecStartPre=/usr/bin/docker pull dockerinpractice/docker-compose-sqlite
+ExecStart=/usr/bin/docker run --name sqliteproxy \
+-p 12346:12346 --link sqliteserver:sqliteserver \
+dockerinpractice/docker-compose-sqlite /bin/bash \
+-c 'socat TCP-L:12346,fork,reuseaddr TCP:sqliteserver:12345'
+ExecStop=/usr/bin/docker rm -f sqliteproxy
+
+[Install]
+WantedBy=multi-user.target

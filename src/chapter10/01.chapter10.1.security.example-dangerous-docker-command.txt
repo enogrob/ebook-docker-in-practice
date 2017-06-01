@@ -1,0 +1,1 @@
+docker run --donotrunme -v /sbin:/sbin busybox rm -rf /sbin

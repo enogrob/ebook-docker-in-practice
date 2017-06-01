@@ -1,0 +1,3 @@
+$ LOCALPATH=/path/to/local/directory
+$ mkdir $LOCALPATH
+$ sshfs user@host:/path/to/remote/directory $LOCALPATH

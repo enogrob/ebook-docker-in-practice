@@ -1,0 +1,14 @@
+$ docker exec -it zookeeper bin/zkCli.sh
+Connecting to localhost:2181
+2015-03-07 02:56:05,076 [myid:] - INFO  [main:Environment@100] - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2015-03-07 02:56:05,079 [myid:] - INFO  [main:Environment@100] - Client environment:host.name=917d0f8ac077
+2015-03-07 02:56:05,079 [myid:] - INFO  [main:Environment@100] - Client environment:java.version=1.7.0_65
+2015-03-07 02:56:05,081 [myid:] - INFO  [main:Environment@100] - Client environment:java.vendor=Oracle Corporation
+[...]
+2015-03-07 03:00:59,043 [myid:] - INFO  [main-SendThread(localhost:2181):ClientCnxn$SendThread@1235] - Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x14bf223e159000d, negotiated timeout = 30000
+
+WATCHER::
+
+WatchedEvent state:SyncConnected type:None path:null
+[zk: localhost:2181(CONNECTED) 0] ls /
+[zookeeper]

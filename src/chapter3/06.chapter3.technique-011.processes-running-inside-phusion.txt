@@ -1,0 +1,12 @@
+root@aba74d81c088:/# ps -ef
+UID  PID  PPID  C STIME TTY     TIME CMD
+root   1     0  0 13:33 ?   00:00:00 /usr/bin/python3 -u /sbin/my_init
+root   7     0  0 13:33 ?   00:00:00 /bin/bash
+root 111     1  0 13:33 ?   00:00:00 /usr/bin/runsvdir -P /etc/service
+root 112   111  0 13:33 ?   00:00:00 runsv cron
+root 113   111  0 13:33 ?   00:00:00 runsv sshd
+root 114   111  0 13:33 ?   00:00:00 runsv syslog-ng
+root 115   112  0 13:33 ?   00:00:00 /usr/sbin/cron -f
+root 116   114  0 13:33 ?   00:00:00 syslog-ng -F -p /var/run/syslog-ng.pid --no-caps
+root 117   113  0 13:33 ?   00:00:00 /usr/sbin/sshd -D
+root 125     7  0 13:38 ?   00:00:00 ps -ef

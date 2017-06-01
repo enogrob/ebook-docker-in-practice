@@ -1,0 +1,6 @@
+$ helios undeploy -a --yes netcat:v1
+Undeploying netcat:v1:2067d43fc2c6f004ea27d7bb7412aff502e3cdac from [5a4abcb27107]
+5a4abcb27107: done
+$ helios remove --yes netcat:v1
+Removing job netcat:v1:2067d43fc2c6f004ea27d7bb7412aff502e3cdac
+netcat:v1:2067d43fc2c6f004ea27d7bb7412aff502e3cdac: done

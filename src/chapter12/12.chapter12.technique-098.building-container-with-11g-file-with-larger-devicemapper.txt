@@ -1,0 +1,10 @@
+# docker build --no-cache -t big .
+Sending build context to Docker daemon 24.58 kB
+Sending build context to Docker daemon
+Step 0 : FROM ubuntu:14.04
+ ---> d2a0ecffe6fa
+Step 1 : RUN truncate --size 11G /root/file
+ ---> Running in f947affe7900
+ ---> 39766546a1a5
+Removing intermediate container f947affe7900
+Successfully built 39766546a1a5

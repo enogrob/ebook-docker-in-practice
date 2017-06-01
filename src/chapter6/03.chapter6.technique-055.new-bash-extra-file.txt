@@ -1,0 +1,2 @@
+bash --version
+cat /etc/issue

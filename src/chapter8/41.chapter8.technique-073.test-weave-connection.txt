@@ -1,0 +1,6 @@
+host1# docker attach $C
+root@28841bd02eff:/# ping -c 1 -q 10.0.1.2
+PING 10.0.1.2 (10.0.1.2): 48 data bytes
+--- 10.0.1.2 ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max/stddev = 1.048/1.048/1.048/0.000 ms

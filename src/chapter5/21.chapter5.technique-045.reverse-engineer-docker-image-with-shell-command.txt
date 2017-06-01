@@ -1,0 +1,8 @@
+docker history reverseme | \
+awk '{print $1}' | \
+grep -v IMAGE | \
+tac | \
+sed "s/\(.*\)/docker inspect \1 | \
+jq -r \'.[0].ContainerConfig.Cmd[2] | tostring\'/" | \
+sh | \
+sed 's/^#(nop) //'

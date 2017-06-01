@@ -1,0 +1,2 @@
+export KUBERNETES_PROVIDER=vagrant
+curl -sS https://get.k8s.io | bash

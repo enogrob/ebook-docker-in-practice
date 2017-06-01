@@ -1,0 +1,1 @@
+$ docker run -t -i --privileged debian /bin/bash

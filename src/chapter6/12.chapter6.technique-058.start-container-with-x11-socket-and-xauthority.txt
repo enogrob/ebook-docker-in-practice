@@ -1,0 +1,5 @@
+$ ls $HOME/.Xauthority
+/home/myuser/.Xauthority
+$ docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --hostname=$HOSTNAME -v $HOME/.Xauthority:/root/.Xauthority \
+    -it ubuntu:14.04 bash

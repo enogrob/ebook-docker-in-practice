@@ -1,0 +1,4 @@
+$ docker build -t go-web-server .
+$ docker images | grep go-web-server
+go-web-server    latest    de1187ee87f3  3 seconds ago   4.156 MB
+$ docker run -p 8080:8080 go-web-server -port 8080

@@ -1,0 +1,4 @@
+user@docker-host$ docker run -d phusion/baseimage
+3c3f8e3fb05d795edf9d791969b21f7f73e99eb1926a6e3d5ed9e1e52d0b446e
+user@docker-host$ docker exec -i -t 3c3f8e3fb05d795 /bin/bash
+root@3c3f8e3fb05d:/#

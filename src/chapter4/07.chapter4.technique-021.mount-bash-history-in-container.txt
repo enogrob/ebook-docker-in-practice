@@ -1,0 +1,3 @@
+$ docker run -e HIST_FILE=/root/.bash_history \
+ -v=$HOME/.bash_history:/root/.bash_history \
+ -ti ubuntu /bin/bash

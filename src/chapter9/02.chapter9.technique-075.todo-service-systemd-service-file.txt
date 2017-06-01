@@ -1,0 +1,16 @@
+[Unit]
+Description=Simple ToDo Application
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+ExecStartPre=/bin/bash \
+-c '/usr/bin/docker rm -f todo || /bin/true'
+ExecStartPre=/usr/bin/docker pull dockerinpractice/todo
+ExecStart=/usr/bin/docker run --name todo \
+-p 8000:8000 dockerinpractice/todo
+ExecStop=/usr/bin/docker rm -f todo
+
+[Install]
+WantedBy=multi-user.target

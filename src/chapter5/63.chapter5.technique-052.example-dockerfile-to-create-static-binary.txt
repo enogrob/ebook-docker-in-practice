@@ -1,0 +1,3 @@
+FROM gcc
+RUN echo 'int main() { puts("Hello world!"); }' > hi.c
+RUN gcc -static hi.c -w -o hi

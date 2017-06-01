@@ -1,0 +1,7 @@
+Started by user anonymous
+Building remotely on testslave (dockerslave) in workspace
+/home/jenkins_slave/workspace/ls
+[ls] $ /bin/sh -xe /tmp/hudson4490746748063684780.sh
++ echo done
+done
+Finished: SUCCESS

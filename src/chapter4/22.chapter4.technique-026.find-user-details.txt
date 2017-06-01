@@ -1,0 +1,6 @@
+$ mkdir dockergui
+$ cd dockergui
+$ id
+uid=1000(dockerinpractice) \
+gid=1000(dockerinpractice) \
+groups=1000(dockerinpractice),10(wheel),989(vboxusers),990(docker)

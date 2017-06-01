@@ -1,0 +1,22 @@
+$ IMG=gliderlabs/registrator:v6
+$ docker pull $IMG
+[...]
+$ ip addr | grep 'inet ' | grep -v 'lo$\|docker0$'
+    inet 192.168.1.80/24 brd 192.168.1.255 scope global wlan0
+$ EXTIP=192.168.1.80
+$ ip addr | grep docker0 | grep inet
+    inet 172.17.42.1/16 scope global docker0
+$ BRIDGEIP=172.17.42.1
+$ docker run -d --name registrator -h $(hostname)-reg \
+-v /var/run/docker.sock:/tmp/docker.sock $IMG -ip $EXTIP -resync \
+60 consul://$BRIDGEIP:8500 # if this fails, $EXTIP is an alternative
+b3c8a04b9dfaf588e46a255ddf4e35f14a9d51199fc6f39d47340df31b019b90
+$ docker logs registrator
+2015/08/14 20:05:57 Starting registrator v6 ...
+2015/08/14 20:05:57 Forcing host IP to 192.168.1.80
+2015/08/14 20:05:58 consul: current leader  192.168.1.87:8300
+2015/08/14 20:05:58 Using consul adapter: consul://172.17.42.1:8500
+2015/08/14 20:05:58 Listening for Docker events ...
+2015/08/14 20:05:58 Syncing services on 2 containers
+2015/08/14 20:05:58 ignored: b3c8a04b9dfa no published ports
+2015/08/14 20:05:58 ignored: a633e58c66b3 no published ports

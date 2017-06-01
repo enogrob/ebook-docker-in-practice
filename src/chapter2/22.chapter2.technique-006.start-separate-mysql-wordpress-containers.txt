@@ -1,0 +1,4 @@
+$ docker run --name wp-mysql \
+  -e MYSQL_ROOT_PASSWORD=yoursecretpassword -d mysql
+$ docker run --name wordpress \
+  --link wp-mysql:mysql -p 10003:80 -d  wordpress

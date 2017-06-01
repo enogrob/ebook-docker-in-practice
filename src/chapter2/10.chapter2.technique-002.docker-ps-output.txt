@@ -1,0 +1,3 @@
+$ docker ps   
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                         PORTS               NAMES
+69828b118ec3        ubuntu:14.04        "echo done"     4 seconds ago   Restarting  (0) Less than a second ago              sick_brattain

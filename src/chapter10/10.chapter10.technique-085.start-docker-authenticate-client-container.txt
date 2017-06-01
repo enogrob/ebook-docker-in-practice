@@ -1,0 +1,4 @@
+$ docker run -d --name docker-authenticate-client \
+  -p 127.0.0.1:12375:12375 \
+  dockerinpractice/docker-authenticate-client \
+  192.168.1.74:2375 username:password

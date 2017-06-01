@@ -1,0 +1,17 @@
+$ docker -H unix:///tmp/dockerapi.sock ps -a
+> 2015/01/12 04:34:38.790706  length=105 from=0 to=104
+GET /v1.16/containers/json?all=1 HTTP/1.1\r
+Host: /tmp/dockerapi.sock\r
+User-Agent: Docker-Client/1.4.1\r
+\r
+< 2015/01/12 04:34:38.792516  length=544 from=0 to=543
+HTTP/1.1 200 OK\r
+Content-Type: application/json\r
+Date: Mon, 12 Jan 2015 09:34:38 GMT\r
+Content-Length: 435\r
+\r
+[{"Command":"/bin/bash","Created":1420731043,"Id":"4eec1b50dc6db7901d3b3c5a8d607f2576829fd6902c7f658735c3bc0a09a39c","Image":"debian:jessie","Names":["/lonely_mclean"],"Ports":[],"Status":"Exited (0) 3 days ago"}
+,{"Command":"/bin/bash","Created":1420729129,"Id":"029851aeccc887ecf9152de97f524d30659b3fa4b0dcc3c3fe09467cd0164da5","Image":"debian:jessie","Names":["/suspicious_torvalds"],"Ports":[],"Status":"Exited (130) 3 days ago"}
+]CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                    PORTS               NAMES
+4eec1b50dc6d        debian:jessie       "/bin/bash"         3 days ago          Exited (0) 3 days ago                         lonely_mclean
+029851aeccc8        debian:jessie       "/bin/bash"         3 days ago          Exited (130) 3 days ago                       suspicious_torvalds

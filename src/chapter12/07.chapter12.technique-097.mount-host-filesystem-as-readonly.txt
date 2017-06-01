@@ -1,0 +1,2 @@
+$ docker run -ti --workdir /host \
+   --volume /:/host:ro ubuntu /bin/bash

@@ -1,0 +1,10 @@
+$ rlwrap telnet localhost 12346
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+SQLite version 3.7.17
+Enter ".help" for instructions
+sqlite> select * from t1;
+select * from t1;
+test
+sqlite>

@@ -1,0 +1,2 @@
+user@yourhostname:/$ docker run -ti --net=host ubuntu /bin/bash
+root@yourhostname:/#

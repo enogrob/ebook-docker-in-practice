@@ -1,0 +1,33 @@
+$ docker build --no-cache .
+Sending build context to Docker daemon 422.9 kB
+Sending build context to Docker daemon
+Step 0 : FROM debian
+ ---> c90d655b99b2
+Step 1 : RUN mkdir -p /opt/libeatmydata
+ ---> Running in fe04bac7df74
+ ---> c0ab8c88bb46
+Removing intermediate container fe04bac7df74
+Step 2 : ADD my.tar.gz /opt/libeatmydata/
+ ---> 06dcd7a88eb7
+Removing intermediate container 3f093a1f9e33
+Step 3 : RUN ls -lRt /opt/libeatmydata
+ ---> Running in e3283848ad65
+/opt/libeatmydata:
+total 4
+drwxr-xr-x 7 1000 1000 4096 Oct 29 23:02 libeatmydata-105
+
+/opt/libeatmydata/libeatmydata-105:
+total 880
+drwxr-xr-x 2 1000 1000   4096 Oct 29 23:02 config
+drwxr-xr-x 3 1000 1000   4096 Oct 29 23:02 debian
+drwxr-xr-x 2 1000 1000   4096 Oct 29 23:02 docs
+drwxr-xr-x 3 1000 1000   4096 Oct 29 23:02 libeatmydata
+drwxr-xr-x 2 1000 1000   4096 Oct 29 23:02 m4
+-rw-r--r-- 1 1000 1000   9803 Oct 29 23:01 config.h.in
+[...edited...]
+-rw-r--r-- 1 1000 1000   1824 Jun 18  2012 pandora_have_better_malloc.m4
+-rw-r--r-- 1 1000 1000    742 Jun 18  2012 pandora_header_assert.m4
+-rw-r--r-- 1 1000 1000    431 Jun 18  2012 pandora_version.m4
+ ---> 2ee9b4c8059f
+Removing intermediate container e3283848ad65
+Successfully built 2ee9b4c8059f

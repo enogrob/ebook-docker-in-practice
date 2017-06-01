@@ -1,0 +1,4 @@
+docker pull debian
+docker tag debian:wheezy \
+mycorp.private.dockerregistry/adev/debian:mywheezy1
+docker push mycorp.private.dockerregistry/adev/debian:mywheezy1

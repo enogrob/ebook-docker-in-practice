@@ -1,0 +1,9 @@
+$ curl -L $HTTPIP:2579/v2/keys/mykey -XPUT -d value="test key"
+{"action":"set","node": {"key":"/mykey","value":"test key","modifiedIndex":7,"createdIndex":7}}
+$ sleep 5
+$ docker kill etcd2
+etcd2
+$ curl -L $HTTPIP:2579/v2/keys/mykey
+curl: (7) couldn't connect to host
+$ curl -L $HTTPIP:2379/v2/keys/mykey
+{"action":"get","node": {"key":"/mykey","value":"test key","modifiedIndex":7,"createdIndex":7}}

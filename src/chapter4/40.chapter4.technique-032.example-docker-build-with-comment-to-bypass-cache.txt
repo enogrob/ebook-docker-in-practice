@@ -1,0 +1,25 @@
+$ docker build .
+Sending build context to Docker daemon  2.56 kB
+Sending build context to Docker daemon
+Step 0 : FROM node
+ ---> 91cbcf796c2c
+Step 1 : MAINTAINER ian.miell@gmail.com
+ ---> Using cache
+ ---> 8f5a8a3d9240
+Step 2 : RUN git clone -q https://github.com/docker-in-practice/todo.git
+ ---> Using cache
+ ---> 48db97331aa2
+Step 3 : WORKDIR todo
+ ---> Using cache
+ ---> c5c85db751d6
+Step 4 : RUN npm install
+ ---> Using cache
+ ---> be943c45c55b
+Step 5 : EXPOSE 8000
+ ---> Using cache
+ ---> 805b18d28a65
+Step 6 : CMD ["npm","start"] #bust the cache
+ ---> Running in fc6c4cd487ce
+ ---> d66d9572115e
+Removing intermediate container fc6c4cd487ce
+Successfully built d66d9572115e

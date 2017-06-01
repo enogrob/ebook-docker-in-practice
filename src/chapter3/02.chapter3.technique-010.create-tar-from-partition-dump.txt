@@ -1,0 +1,3 @@
+$ sudo mount -o loop partition.dump /mnt
+$ sudo tar cf $(pwd)/img.tar -C /mnt .
+$ sudo umount /mnt

@@ -1,0 +1,15 @@
+$ ls -1 /tmp/syslogdev/
+fd
+full
+fuse
+kcore
+log
+null
+ptmx
+random
+stderr
+stdin
+stdout
+tty
+urandom
+zero

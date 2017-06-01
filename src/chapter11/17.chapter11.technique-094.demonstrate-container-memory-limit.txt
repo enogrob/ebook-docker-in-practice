@@ -1,0 +1,9 @@
+$ docker run -it -m 4m ubuntu:14.04 bash
+root@cffc126297e2:/# \
+python3 -c 'open("/dev/zero").read(10*1024*1024)'
+Killed
+root@e9f13cacd42f:/# \
+A=$(dd if=/dev/zero bs=1M count=10 | base64)
+$
+$ echo $?
+137

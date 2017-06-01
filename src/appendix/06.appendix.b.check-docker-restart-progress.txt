@@ -1,0 +1,2 @@
+$ journalctl -u docker
+$ journalctl -u docker -f

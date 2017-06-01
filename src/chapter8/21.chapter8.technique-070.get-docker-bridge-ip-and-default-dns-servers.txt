@@ -1,0 +1,5 @@
+$ ip addr | grep 'inet.*docker0'
+    inet 172.17.42.1/16 scope global docker0
+$ docker run --rm ubuntu:14.04.2 cat /etc/resolv.conf | grep nameserver
+nameserver 8.8.8.8
+nameserver 8.8.4.4

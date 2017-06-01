@@ -1,0 +1,28 @@
+$ docker run -d --name py2 -p 80 ubuntu:14.04.2 \
+  sh -c 'cd /etc && python3 -m http.server 80'
+9b5355b9b188427abaf367a51a88c1afa2186e6179ab46830715a20eacc33660
+$ docker inspect -f '{{.NetworkSettings.Ports}}' py2
+map[80/tcp:[map[HostIp:0.0.0.0 HostPort:49161]]]
+$ curl $HTTPIP:49161 | tail | head -n 5
+<li><a href="udev/">udev/</a></li>
+<li><a href="update-motd.d/">update-motd.d/</a></li>
+<li><a href="upstart-xsessions">upstart-xsessions</a></li>
+<li><a href="vim/">vim/</a></li>
+<li><a href="vtrgb">vtrgb@</a></li>
+$ etcdctl set /app/upstream/py2 $HTTPIP:49161
+10.194.12.221:49161
+$ etcdctl ls /app/upstream
+/app/upstream/py1
+/app/upstream/py2
+$ curl -s localhost:8000 | tail | head -n 5
+<li><a href="sbin/">sbin/</a></li>
+<li><a href="srv/">srv/</a></li>
+<li><a href="sys/">sys/</a></li>
+<li><a href="tmp/">tmp/</a></li>
+<li><a href="usr/">usr/</a></li>
+$ curl -s localhost:8000 | tail | head -n 5
+<li><a href="udev/">udev/</a></li>
+<li><a href="update-motd.d/">update-motd.d/</a></li>
+<li><a href="upstart-xsessions">upstart-xsessions</a></li>
+<li><a href="vim/">vim/</a></li>
+<li><a href="vtrgb">vtrgb@</a></li>

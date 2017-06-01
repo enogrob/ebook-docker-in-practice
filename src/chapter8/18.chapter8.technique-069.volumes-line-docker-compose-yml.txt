@@ -1,0 +1,1 @@
+  - /tmp/sqlitedbs/test:/opt/sqlite/db

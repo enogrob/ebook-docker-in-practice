@@ -1,0 +1,25 @@
+$ sudo su
+$ read -s PASSWORD
+$ read SERVER
+$ mkdir -p /etc/docker
+$ cd /etc/docker
+$ openssl genrsa -aes256 -passout pass:$PASSWORD \
+-out ca-key.pem 2048
+$ openssl req -new -x509 -days 365 -key ca-key.pem -passin pass:$PASSWORD \
+-sha256 -out ca.pem -subj "/C=NL/ST=./L=./O=./CN=$SERVER"
+$ openssl genrsa -out server-key.pem 2048
+$ openssl req -subj "/CN=$SERVER" -new -key server-key.pem \
+-out server.csr
+$ openssl x509 -req -days 365 -in server.csr -CA ca.pem -CAkey ca-key.pem
+-passin "pass:$PASSWORD" -CAcreateserial \
+-out server-cert.pem
+$ openssl genrsa -out key.pem 2048
+$ openssl req -subj '/CN=client' -new -key key.pem\
+-out client.csr
+$ sh -c 'echo "extendedKeyUsage = clientAuth" > extfile.cnf'
+$ openssl x509 -req -days 365 -in client.csr -CA ca.pem -CAkey ca-key.pem \
+-passin "pass:$PASSWORD" -CAcreateserial -out cert.pem \
+-extfile extfile.cnf
+$ chmod 0400 ca-key.pem key.pem server-key.pem
+$ chmod 0444 ca.pem server-cert.pem cert.pem
+$ rm client.csr server.csr

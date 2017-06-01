@@ -1,0 +1,14 @@
+$ mkdir bup_pool
+$ alias dbup="docker run --rm \
+    -v $(pwd)/bup_pool:/pool -v /var/run/docker.sock:/var/run/docker.sock \
+    dockerinpractice/dbup"
+$ dbup save ubuntu:14.04.1
+Saving image!
+Done!
+$ du -sh bup_pool
+74M     bup_pool
+$ dbup save ubuntu:14.04.2
+Saving image!
+Done!
+$ du -sh bup_pool
+90M     bup_pool

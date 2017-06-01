@@ -1,0 +1,6 @@
+$ docker exec 8c4d956cf9cf ping -qc 3 172.17.0.54
+PING 172.17.0.54 (172.17.0.54) 56(84) bytes of data.
+
+--- 172.17.0.54 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 1999ms
+rtt min/avg/max/mdev = 0.065/0.084/0.095/0.015 ms

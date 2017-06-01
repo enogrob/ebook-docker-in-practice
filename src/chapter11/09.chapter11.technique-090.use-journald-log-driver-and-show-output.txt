@@ -1,0 +1,3 @@
+$ docker run --log-driver=journald ubuntu echo 'outputting to journald'
+outputting to syslog
+$ journalctl | grep 'outputting to journald'

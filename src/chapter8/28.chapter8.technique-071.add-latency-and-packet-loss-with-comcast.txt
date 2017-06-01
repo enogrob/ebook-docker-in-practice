@@ -1,0 +1,13 @@
+$ comcast -cont c1 -default-bw 50 -latency 100 -packet-loss 20%
+2015/07/29 02:28:13 Found interface vetha7b90a7 for container 'c1'
+sudo tc qdisc show | grep "netem"
+sudo tc qdisc add dev vetha7b90a7 handle 10: root htb
+sudo tc class add dev vetha7b90a7 parent 10: classid 10:1 htb rate 50kbit
+sudo tc class add dev vetha7b90a7 parent 10:1 classid 10:10 htb rate 50kbit
+sudo tc qdisc add dev vetha7b90a7 parent 10:10 handle 100: netem delay 100ms loss 20.00%
+sudo iptables -A POSTROUTING -t mangle -j CLASSIFY --set-class 10:10 -p tcp
+sudo iptables -A POSTROUTING -t mangle -j CLASSIFY --set-class 10:10 -p udp
+sudo iptables -A POSTROUTING -t mangle -j CLASSIFY --set-class 10:10 -p icmp
+2015/07/29 02:28:13 Packet rules setup...
+2015/07/29 02:28:13 Run `sudo tc -s qdisc` to double check
+2015/07/29 02:28:13 Run `comcast --mode stop` to reset

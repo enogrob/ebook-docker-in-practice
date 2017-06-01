@@ -1,0 +1,6 @@
+$ docker run -d --name tcpflowtest alpine:3.2 sleep 30d
+fa95f9763ab56e24b3a8f0d9f86204704b770ffb0fd55d4fd37c59dc1601ed11
+$ docker inspect -f '{{ .NetworkSettings.IPAddress }}' tcpflowtest
+172.17.0.1
+$ tcpflow -c -J -i docker0 'host 172.17.0.1 and port 80'
+tcpflow: listening on docker0

@@ -1,0 +1,2 @@
+$ docker run --name jenkins_slave -ti -p 2222:22 jenkins_slave
+172.17.42.1

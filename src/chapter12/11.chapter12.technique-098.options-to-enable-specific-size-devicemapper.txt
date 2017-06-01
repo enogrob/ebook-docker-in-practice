@@ -1,0 +1,1 @@
+DOCKER_OPTIONS="-s devicemapper --storage-opt dm.basesize=20G"

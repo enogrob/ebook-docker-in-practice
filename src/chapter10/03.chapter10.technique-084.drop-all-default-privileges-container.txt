@@ -1,0 +1,5 @@
+$ docker run -ti --cap-drop=CHOWN --cap-drop=DAC_OVERRIDE \
+--cap-drop=FSETID --cap-drop=FOWNER --cap-drop=KILL --cap-drop=MKNOD \
+--cap-drop=NET_RAW --cap-drop=SETGID --cap-drop=SETUID \
+--cap-drop=SETFCAP --cap-drop=SETPCAP --cap-drop=NET_BIND_SERVICE \
+--cap-drop=SYS_CHROOT --cap-drop=AUDIT_WRITE debian /bin/bash

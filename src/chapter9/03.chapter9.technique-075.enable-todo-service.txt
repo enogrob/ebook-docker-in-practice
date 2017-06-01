@@ -1,0 +1,4 @@
+$ systemctl enable /etc/systemd/system/todo.service
+$ ln -s '/etc/systemd/system/todo.service' \
+'/etc/systemd/system/multi-user.target.wants/todo.service'
+$ systemctl start todo.service

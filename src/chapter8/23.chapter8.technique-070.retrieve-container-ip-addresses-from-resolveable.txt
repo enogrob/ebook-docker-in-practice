@@ -1,0 +1,4 @@
+$ dig +short @172.17.42.1 res.docker
+172.17.0.22
+$ dig +short @172.17.42.1 resolvable
+172.17.0.22

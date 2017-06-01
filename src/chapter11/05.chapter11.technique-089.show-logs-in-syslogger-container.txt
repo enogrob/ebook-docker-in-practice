@@ -1,0 +1,9 @@
+$ docker exec -ti syslogger tail -f /var/log/syslog
+May 25 11:51:25 f4fb5d829699 logger: hello
+May 25 11:55:15 f4fb5d829699 logger: hello_1
+May 25 11:55:15 f4fb5d829699 logger: hello_2
+May 25 11:55:16 f4fb5d829699 logger: hello_3
+[...]
+May 25 11:57:38 f4fb5d829699 logger: hello_97
+May 25 11:57:38 f4fb5d829699 logger: hello_98
+May 25 11:57:39 f4fb5d829699 logger: hello_99

@@ -1,0 +1,8 @@
+$ VMDISK="$HOME/VirtualBox VMs/myvm/myvm.vdi"
+$ sudo modprobe nbd
+$ sudo qemu-nbd -c /dev/nbd0 -r $VMDISK
+$ ls /dev/nbd0p*
+/dev/nbd0p1 /dev/nbd0p2
+$ sudo mount /dev/nbd0p2 /mnt
+$ sudo tar cf img.tar -C /mnt .
+$ sudo umount /mnt && sudo qemu-nbd -d /dev/nbd0

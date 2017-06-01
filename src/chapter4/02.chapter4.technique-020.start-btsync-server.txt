@@ -1,0 +1,17 @@
+[host1]$ docker run -d -p 8888:8888 -p 55555:55555 \
+--name btsync ctlc/btsync
+$ docker logs btsync
+Starting btsync with secret: \
+ALSVEUABQQ5ILRS2OQJKAOKCU5SIIP6A3
+By using this application, you agree to our Privacy Policy and Terms.
+http://www.bittorrent.com/legal/privacy
+http://www.bittorrent.com/legal/terms-of-use
+
+total physical memory 536870912 max disk cache 2097152
+Using IP address 172.17.4.121
+
+[host1]$ docker run -i -t --volumes-from btsync \
+ubuntu /bin/bash
+$ touch /data/shared_from_server_one
+$ ls /data
+shared_from_server_one

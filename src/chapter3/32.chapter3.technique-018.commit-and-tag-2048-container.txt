@@ -1,0 +1,3 @@
+$ docker commit win2048
+4ba15c8d337a0a4648884c691919b29891cbbe26cb709c0fde74db832a942083
+$ docker tag 4ba15c8d337 my2048tag:$(date +%s)

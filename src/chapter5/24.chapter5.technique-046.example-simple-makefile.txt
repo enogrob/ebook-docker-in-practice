@@ -1,0 +1,12 @@
+.PHONY: default createfile catfile
+
+default: createfile
+
+createfile: x.y.z
+
+catfile:
+    cat x.y.z
+
+x.y.z:
+    echo "About to create the file x.y.z"
+    echo abc > x.y.z

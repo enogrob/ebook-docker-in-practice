@@ -1,0 +1,2 @@
+$ ip addr | grep 'inet ' | grep -v 'lo$\|docker0$'
+    inet 10.194.12.221/20 brd 10.194.15.255 scope global eth0

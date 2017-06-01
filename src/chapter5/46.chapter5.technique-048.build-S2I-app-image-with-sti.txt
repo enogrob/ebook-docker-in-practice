@@ -1,0 +1,13 @@
+$ sti build --force-pull=false --loglevel=1 \
+file:///root/myproject sti-simple-shell final-image-1
+I0608 13:02:00.727125 00119 sti.go:112] Building final-image-1
+I0608 13:02:00.843933 00119 sti.go:182] Using assemble from image:///usr/local/sti
+I0608 13:02:00.843961 00119 sti.go:182] Using run from image:///usr/local/sti
+I0608 13:02:00.843976 00119 sti.go:182] Using save-artifacts from image:///usr/local/sti
+I0608 13:02:00.843989 00119 sti.go:120] Clean build will be performed
+I0608 13:02:00.844003 00119 sti.go:130] Building final-image-1
+I0608 13:02:00.844026 00119 sti.go:330] No .sti/environment provided (no evironment file found in application sources)
+I0608 13:02:01.178553 00119 sti.go:388] ---> Installing application source
+I0608 13:02:01.179582 00119 sti.go:388] ---> Building application from source
+I0608 13:02:01.294598 00119 sti.go:216] No .sti/environment provided (no evironment file found in application sources)
+I0608 13:02:01.353449 00119 sti.go:246] Successfully built final-image-1

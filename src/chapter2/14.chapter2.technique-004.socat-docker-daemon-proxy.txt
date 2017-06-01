@@ -1,0 +1,2 @@
+$ sudo socat -v UNIX-LISTEN:/tmp/dockerapi.sock \
+  UNIX-CONNECT:/var/run/docker.sock &

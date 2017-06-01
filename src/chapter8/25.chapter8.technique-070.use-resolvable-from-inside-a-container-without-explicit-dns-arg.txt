@@ -1,0 +1,6 @@
+$ docker run --rm ubuntu:14.04.2 ping -q -c1 resolvable
+PING resolvable (172.17.0.1) 56(84) bytes of data.
+
+--- resolvable ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.095/0.095/0.095/0.000 ms

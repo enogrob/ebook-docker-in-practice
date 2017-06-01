@@ -1,0 +1,3 @@
+docker pull debian:wheezy
+docker tag debian:wheezy adev/debian:mywheezy1
+docker push adev/debian:mywheezy1

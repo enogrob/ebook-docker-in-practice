@@ -1,0 +1,1 @@
+docker run -m 100m jess/stress --vm 1 --vm-bytes 150M --vm-hang 0

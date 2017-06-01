@@ -1,0 +1,2 @@
+$ grep 'outputting to syslog' /var/log/syslog
+Jun 23 20:37:50 myhost docker/6239418882b6[2559]: outputting to syslog

@@ -1,0 +1,3 @@
+$ docker tag \
+  071f6a36c23a19801285b82eafc99333c76f63ea0aa0b44902c6bae482a6e036 \
+  imagename

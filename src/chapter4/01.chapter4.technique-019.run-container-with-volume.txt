@@ -1,0 +1,1 @@
+$ docker run -v /var/db/tables:/var/data1 -it debian bash

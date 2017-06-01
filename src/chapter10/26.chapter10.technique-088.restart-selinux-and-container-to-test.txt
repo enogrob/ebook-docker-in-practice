@@ -1,0 +1,6 @@
+docker rm -f selinuxdock
+setenforce Enforcing
+docker run -d --name selinuxdock \
+--security-opt label:type:docker_apache_t httpd
+docker logs selinuxdock
+grep -w denied /var/log/audit/audit.log

@@ -1,0 +1,7 @@
+Pause point:
+Have a shell:
+You can now type in commands and alter the state of the target.
+Hit return to see the prompt
+Hit CTRL and ] at the same time to continue with build
+
+Hit CTRL and u to save the state

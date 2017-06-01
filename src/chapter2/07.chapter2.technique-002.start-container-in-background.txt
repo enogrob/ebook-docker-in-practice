@@ -1,0 +1,1 @@
+$ docker run -d -i -p 1234:1234 --name daemon ubuntu nc -l 1234

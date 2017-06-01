@@ -1,0 +1,20 @@
+$ IMG=dockerinpractice/comcast
+$ docker pull $IMG
+latest: Pulling from dockerinpractice/comcast
+[...]
+Status: Downloaded newer image for dockerinpractice/comcast:latest
+$ alias comcast="docker run --rm --pid=host --privileged \
+-v /var/run/docker.sock:/var/run/docker.sock $IMG"
+$ comcast -help
+Usage of comcast:
+  -cont="": Container ID or name to get virtual interface of
+  -default-bw=-1: Default bandwidth limit in kbit/s (fast-lane)
+  -device="": Interface (device) to use (defaults to eth0 where applicable)
+  -dry-run=false: Specifies whether or not to commit the rule changes
+  -latency=-1: Latency to add in ms
+  -mode="start": Start or stop packet controls
+  -packet-loss="0": Packet loss percentage (eg: 0.1%%)
+  -target-addr="": Target addresses, (eg: 10.0.0.1 or 10.0.0.0/24 or 10.0.0.1,192.168.0.0/24)
+  -target-bw=-1: Target bandwidth limit in kbit/s (slow-lane)
+  -target-port="": Target port(s) (eg: 80 or 1:65535 or 22,80,443,1000:1010)
+  -target-proto="tcp,udp,icmp": Target protocol TCP/UDP (eg: tcp or tcp,udp or icmp)

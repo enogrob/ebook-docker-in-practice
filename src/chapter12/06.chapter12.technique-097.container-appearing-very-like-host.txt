@@ -1,0 +1,3 @@
+host:/$ docker run -ti --net=host --pid=host --ipc=host \
+--volume /:/host \
+busybox chroot /host

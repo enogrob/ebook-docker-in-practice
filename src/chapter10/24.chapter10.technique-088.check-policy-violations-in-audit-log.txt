@@ -1,0 +1,6 @@
+$ grep -w denied /var/log/audit/audit.log
+type=AVC msg=audit(1433073250.049:392): avc:  denied  { transition } for pid=2379 comm="docker" path="/usr/local/bin/httpd-foreground" dev="dm-1" ino=530204 scontext=system_u:system_r:init_t:s0 tcontext=system_u:system_r:docker_apache_t:s0:c740,c787 tclass=process
+type=AVC msg=audit(1433073250.049:392): avc:  denied  { write } for  pid=2379 comm="httpd-foregroun" path="pipe:[19550]" dev="pipefs" ino=19550 scontext=system_u:system_r:docker_apache_t:s0:c740,c787 tcontext=system_u:system_r:init_t:s0 tclass=fifo_file
+type=AVC msg=audit(1433073250.236:394): avc:  denied  { append } for  pid=2379 comm="httpd" dev="pipefs" ino=19551 scontext=system_u:system_r:docker_apache_t:s0:c740,c787 tcontext=system_u:system_r:init_t:s0 tclass=fifo_file
+type=AVC msg=audit(1433073250.236:394): avc:  denied  { open } for  pid=2379 comm="httpd" path="pipe:[19551]" dev="pipefs" ino=19551 scontext=system_u:system_r:docker_apache_t:s0:c740,c787 tcontext=system_u:system_r:init_t:s0 tclass=fifo_file
+[...]

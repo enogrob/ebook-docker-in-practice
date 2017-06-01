@@ -1,0 +1,3 @@
+docker inspect \
+--format '{{.NetworkSettings.IPAddress}}' \
+0808ef13d450

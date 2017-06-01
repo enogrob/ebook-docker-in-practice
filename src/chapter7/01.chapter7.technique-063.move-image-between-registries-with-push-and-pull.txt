@@ -1,0 +1,9 @@
+$ IMAGE=mygroup/myimage:mytag
+$ OLDREG=test-registry.company.com
+$ NEWREG=stage-registry.company.com
+$ docker pull $OLDREG/$MYIMAGE
+[...]
+$ docker tag -f $OLDREG/$MYIMAGE $NEWREG/$MYIMAGE
+$ docker push $NEWREG/$MYIMAGE
+$ docker rmi $OLDREG/$MYIMAGE
+$ docker rmi $(docker images -q --filter dangling=true)

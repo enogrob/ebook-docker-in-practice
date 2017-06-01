@@ -1,0 +1,21 @@
+$ mkdir tmp && cd tmp
+$ wget \
+http://mirrors.kernel.org/ubuntu/pool/main/libe/libeatmydata/eatmydata_26-2_i386.deb
+$ docker run -v $(pwd):/io dockerinpractice/alienate
+Examining eatmydata_26-2_i386.deb from /io
+eatmydata_26-2_i386.deb appears to be a Debian package
+eatmydata-26-3.i386.rpm generated
+eatmydata-26.slp generated
+eatmydata-26.tgz generated
+=================================================================================
+/io now contains:
+eatmydata-26-3.i386.rpm
+eatmydata-26.slp
+eatmydata-26.tgz
+eatmydata_26-2_i386.deb
+=================================================================================
+$ ls -1
+eatmydata_26-2_i386.deb
+eatmydata-26-3.i386.rpm
+eatmydata-26.slp
+eatmydata-26.tgz

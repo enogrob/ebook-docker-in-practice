@@ -1,0 +1,2 @@
+$ cd /
+$ sudo tar cf /img.tar --exclude=/img.tar --one-file-system /

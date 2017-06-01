@@ -1,0 +1,27 @@
+$ docker logs nginx
+Using http://10.194.12.221:8080 as backend
+2015-05-18T13:09:56Z fc6082e55a77 confd[14]: ERROR 100: Key not found (/app) [14]
+2015-05-18T13:10:06Z fc6082e55a77 confd[14]: ERROR 100: Key not found (/app) [14]
+$ echo $HTTPIP
+http://10.194.12.221
+$ etcdctl set /app/upstream/py1 10.194.12.221:49156
+10.194.12.221:49156
+$ sleep 10
+$ docker logs nginx
+Using http://10.194.12.221:8080 as backend
+2015-05-18T13:09:56Z fc6082e55a77 confd[14]: ERROR 100: Key not found (/app) [14]
+2015-05-18T13:10:06Z fc6082e55a77 confd[14]: ERROR 100: Key not found (/app) [14]
+2015-05-18T13:10:16Z fc6082e55a77 confd[14]: ERROR 100: Key not found (/app) [14]
+2015-05-18T13:10:26Z fc6082e55a77 confd[14]: INFO Target config /etc/nginx/conf.d/app.conf out of sync
+2015-05-18T13:10:26Z fc6082e55a77 confd[14]: INFO Target config /etc/nginx/conf.d/app.conf has been updated
+$ curl -s localhost:8000 | tail
+<li><a href="sbin/">sbin/</a></li>
+<li><a href="srv/">srv/</a></li>
+<li><a href="sys/">sys/</a></li>
+<li><a href="tmp/">tmp/</a></li>
+<li><a href="usr/">usr/</a></li>
+<li><a href="var/">var/</a></li>
+</ul>
+<hr>
+</body>
+</html>

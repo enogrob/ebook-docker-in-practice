@@ -1,0 +1,3 @@
+$ docker exec tcpflowtest wget -O /dev/null http://www.example.com/
+Connecting to www.example.com (93.184.216.34:80)
+null            100% |*******************************|  1270   0:00:00 ETA

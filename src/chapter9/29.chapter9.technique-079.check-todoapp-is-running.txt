@@ -1,0 +1,3 @@
+$ wget -qO- 10.246.1.3:8000
+<html manifest="/todo.appcache">
+[...]

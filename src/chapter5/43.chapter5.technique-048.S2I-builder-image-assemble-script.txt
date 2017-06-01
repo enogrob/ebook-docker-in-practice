@@ -1,0 +1,12 @@
+#!/bin/bash -e
+if [ "$1" = "-h" ]; then
+    exec /usr/local/sti/usage
+fi
+if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+  echo "---> Restoring build artifacts"
+  mv /tmp/artifacts/* ./
+fi
+echo "---> Installing application source"
+cp -Rf /tmp/src/. ./
+echo "---> Building application from source"
+chmod +x /opt/openshift/src/app.sh

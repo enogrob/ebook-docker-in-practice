@@ -1,0 +1,6 @@
+$ chmod +x setup_dbs.sh
+$ ./setup_dbs.sh
+$ sudo docker-compose up
+Creating dockercomposesqlite_server_1...
+Creating dockercomposesqlite_proxy_1...
+Attaching to dockercomposesqlite_server_1, dockercomposesqlite_proxy_1

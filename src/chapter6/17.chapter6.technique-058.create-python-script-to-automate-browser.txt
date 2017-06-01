@@ -1,0 +1,29 @@
+>>> exit()
+root@ef351febcee4:/# apt-get install -y xvfb
+[...]
+root@ef351febcee4:/# exit
+$ docker commit ef351febcee4 selenium
+d1cbfbc76790cae5f4ae95805a8ca4fc4cd1353c72d7a90b90ccfb79de4f2f9b
+$ cat > myscript.py << EOF
+from selenium import webdriver
+b = webdriver.Firefox()
+print 'Visiting github'
+b.get('http://github.com')
+print 'Performing search'
+searchselector = '.js-site-search-form input[type="text"]'
+searchbox = b.find_element_by_css_selector(searchselector)
+searchbox.send_keys('docker-in-practice\n')
+print 'Switching to user search'
+usersxpath = '//nav//a[contains(text(), "Users")]'
+userslink = b.find_element_by_xpath(usersxpath)
+userslink.click()
+print 'Opening docker in practice user page'
+dlinkselector = '.user-list-info a'
+dlink = b.find_elements_by_css_selector(dlinkselector)[99]
+dlink.click()
+print 'Visiting docker in practice site'
+mlinkselector = '.org-header a.meta-link'
+mlink = b.find_element_by_css_selector(mlinkselector)
+mlink.click()
+print 'Done!'
+EOF

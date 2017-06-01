@@ -1,0 +1,6 @@
+$ docker run -d mysecret /bin/true
+28cde380f0195b24b33e19e132e81a4f58d2f055a42fa8406e755b2ef283630f
+$ docker export 28cde380f | docker import - mysecret
+$ docker history mysecret
+IMAGE             CREATED         CREATED BY  SIZE
+fdbeae08751b  13 seconds ago              85.01 MB

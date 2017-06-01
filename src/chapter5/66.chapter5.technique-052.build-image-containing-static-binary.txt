@@ -1,0 +1,17 @@
+$ docker build -t hello_world .
+Sending build context to Docker daemon 931.3 kB
+Sending build context to Docker daemon
+Step 0 : FROM scratch
+ --->
+Step 1 : ADD hi /hi
+ ---> 2fe834f724f8
+Removing intermediate container 01f73ea277fb
+Step 2 : ENTRYPOINT /hi
+ ---> Running in 045e32673c7f
+ ---> 5f8802ae5443
+Removing intermediate container 045e32673c7f
+Successfully built 5f8802ae5443
+$ docker run hello_world
+Hello world!
+$ docker images | grep hello_world
+hello_world      latest    5f8802ae5443   24 seconds ago  928.3 kB

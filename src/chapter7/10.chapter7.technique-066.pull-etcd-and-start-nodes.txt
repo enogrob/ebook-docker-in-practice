@@ -1,0 +1,24 @@
+$ IMG=quay.io/coreos/etcd:v2.0.10
+$ docker pull $IMG
+[...]
+$ HTTPIP=http://10.194.12.221
+$ CLUSTER="etcd0=$HTTPIP:2380,etcd1=$HTTPIP:2480,etcd2=$HTTPIP:2580"
+$ ARGS=
+$ ARGS="$ARGS -listen-client-urls http://0.0.0.0:2379"
+$ ARGS="$ARGS -listen-peer-urls http://0.0.0.0:2380"
+$ ARGS="$ARGS -initial-cluster-state new"
+$ ARGS="$ARGS -initial-cluster $CLUSTER"
+$ docker run -d -p 2379:2379 -p 2380:2380 --name etcd0 $IMG \
+    $ARGS -name etcd0 -advertise-client-urls $HTTPIP:2379 \
+    -initial-advertise-peer-urls $HTTPIP:2380
+912390c041f8e9e71cf4cc1e51fba2a02d3cd4857d9ccd90149e21d9a5d3685b
+$ docker run -d -p 2479:2379 -p 2480:2380 --name etcd1 $IMG \
+    $ARGS -name etcd1 -advertise-client-urls $HTTPIP:2479 \
+    -initial-advertise-peer-urls $HTTPIP:2480
+446b7584a4ec747e960fe2555a9aaa2b3e2c7870097b5babe65d65cffa175dec
+$ docker run -d -p 2579:2379 -p 2580:2380 --name etcd2 $IMG \
+    $ARGS -name etcd2 -advertise-client-urls $HTTPIP:2579 \
+    -initial-advertise-peer-urls $HTTPIP:2580
+3089063b6b2ba0868e0f903a3d5b22e617a240cec22ad080dd1b497ddf4736be
+$ curl -L $HTTPIP:2579/version
+etcd 2.0.10

@@ -1,0 +1,2 @@
+I0312 01:46:44.332494     9 master.cpp:3068] Registering slave at slave(1)@172.17.0.3:5051 (8c6c63023050) with id 20150312-014359-33558956-5050-1-S0
+I0312 01:46:44.333772     8 registrar.cpp:445] Applied 1 operations in 134310ns; attempting to update the 'registry'

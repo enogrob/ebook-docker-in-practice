@@ -1,0 +1,22 @@
+$ make -f /usr/share/selinux/devel/Makefile \
+docker_apache.te
+Compiling targeted docker_apache module
+/usr/bin/checkmodule:  loading policy configuration from tmp/docker_apache.tmp
+/usr/bin/checkmodule:  policy configuration loaded
+/usr/bin/checkmodule:  writing binary representation (version 17) to tmp/docker_apache.mod
+Creating targeted docker_apache.pp policy package
+rm tmp/docker_apache.mod tmp/docker_apache.mod.fc
+$ semodule -i docker_apache.pp
+$ setenforce Enforcing
+$ docker run -ti --name selinuxdock --security-opt label:type:docker_apache_t httpd
+Unable to find image 'httpd:latest' locally
+latest: Pulling from library/httpd
+2a341c7141bd: Pull complete 
+[...]
+Status: Downloaded newer image for httpd:latest
+permission denied
+Error response from daemon: Cannot start container 650c446b20da6867e6e13bdd6ab53f3ba3c3c565abb56c4490b487b9e8868985: [8] System error: permission denied
+$ docker rm -f selinuxdock
+selinuxdock
+$ setenforce Permissive
+$ docker run -d --name selinuxdock --security-opt label:type:docker_apache_t httpd

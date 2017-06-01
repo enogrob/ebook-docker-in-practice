@@ -1,0 +1,6 @@
+# docker run -ti --volumes-from nfs_client debian /bin/bash
+root@079d70f79d84:/# ls /mnt
+myb
+root@079d70f79d84:/# cd /mnt
+root@079d70f79d84:/mnt# touch asd
+touch: cannot touch `asd': Read-only file system

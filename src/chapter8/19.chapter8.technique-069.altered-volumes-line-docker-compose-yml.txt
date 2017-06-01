@@ -1,0 +1,1 @@
+  - /tmp/sqlitedbs/live:/opt/sqlite/db

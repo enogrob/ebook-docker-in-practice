@@ -1,0 +1,20 @@
+c2 $ IMG=dockerinpractice/consul-agent
+c2 $ docker pull $IMG
+[...]
+c2 $ EXTIP1=192.168.1.87
+c2 $ ip addr | grep docker0 | grep inet
+    inet 172.17.42.1/16 scope global docker0
+c2 $ BRIDGEIP=172.17.42.1
+c2 $ ip addr | grep 'inet ' | grep -v 'lo$\|docker0$'
+    inet 192.168.1.80/24 brd 192.168.1.255 scope global wlan0
+c2 $ EXTIP2=192.168.1.80
+c2 $ echo '{"ports": {"dns": 53}}' > dns.json
+c2 $ docker run -d --name consul-client --net host \
+-v $(pwd)/dns.json:/config/dns.json $IMG -client $BRIDGEIP -bind $EXTIP2 \
+-join $EXTIP1 -recursor 8.8.8.8 -recursor 8.8.4.4
+5454029b139cd28e8500922d1167286f7e4fb4b7220985ac932f8fd5b1cdef25
+c2 $ docker logs consul-client
+[...]
+    2015/08/14 19:40:20 [INFO] serf: EventMemberJoin: mylaptop2 192.168.1.80
+[...]
+    2015/08/14 13:24:37 [INFO] consul: adding server mylaptop (Addr: 192.168.1.87:8300) (DC: dc1)

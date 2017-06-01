@@ -1,0 +1,3 @@
+FROM scratch
+ADD go-web-server /go-web-server
+ENTRYPOINT ["/go-web-server"]

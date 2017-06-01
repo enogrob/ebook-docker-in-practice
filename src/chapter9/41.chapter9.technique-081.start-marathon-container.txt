@@ -1,0 +1,20 @@
+$ docker inspect -f '{{.NetworkSettings.IPAddress}}' mesmaster
+172.17.0.2
+$ docker inspect -f '{{.NetworkSettings.IPAddress}}' messlave
+172.17.0.3
+$ docker inspect -f '{{.NetworkSettings.IPAddress}}' zookeeper
+172.17.0.4
+$ docker pull mesosphere/marathon:v0.8.2
+[...]
+$ docker run -d -h $(hostname) --name marathon -p 8080:8080 \
+mesosphere/marathon:v0.8.2 --master 172.17.0.2:5050 --local_port_min 8000 \
+--local_port_max 8100 --zk zk://172.17.0.4:2181/marathon
+accd6de46cfab65572539ccffa5c2303009be7ec7dbfb49e3ab8f447453f2b93
+$ docker logs -f marathon
+MESOS_NATIVE_JAVA_LIBRARY is not set. Searching in /usr/lib /usr/local/lib.
+MESOS_NATIVE_LIBRARY, MESOS_NATIVE_JAVA_LIBRARY set to '/usr/lib/libmesos.so'
+[2015-06-23 19:42:14,836] INFO Starting Marathon 0.8.2 (mesosphere.marathon.Main$:87)
+[2015-06-23 19:42:16,270] INFO Connecting to Zookeeper... (mesosphere.marathon.Main$:37)
+[...]
+[2015-06-30 18:20:07,971] INFO started processing 1 offers, launching at most 1 tasks per offer and 1000 tasks in total (mesosphere.marathon.tasks.IterativeOfferMatcher$:124)
+[2015-06-30 18:20:07,972] INFO Launched 0 tasks on 0 offers, declining 1 (mesosphere.marathon.tasks.IterativeOfferMatcher$:216)

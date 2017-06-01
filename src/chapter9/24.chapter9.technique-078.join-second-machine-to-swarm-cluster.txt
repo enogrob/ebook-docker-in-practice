@@ -1,0 +1,14 @@
+h2 $ docker run -d swarm join --addr=10.194.8.7:2375 token://$CLUSTER_ID
+h2 $ docker -H tcp://10.194.12.221:4000 info
+Containers: 3
+Strategy: spread
+Filters: affinity, health, constraint, port, dependency
+Nodes: 2
+ h2: 10.194.8.7:2375
+  └ Containers: 1
+  └ Reserved CPUs: 0 / 4
+  └ Reserved Memory: 0 B / 3.93 GiB
+ h1: 10.194.12.221:2375
+  └ Containers: 2
+  └ Reserved CPUs: 0 / 4
+  └ Reserved Memory: 0 B / 7.907 GiB

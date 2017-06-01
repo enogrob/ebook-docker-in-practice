@@ -1,0 +1,32 @@
+$ mkdir tmp && cd tmp
+$ docker run -v $(pwd):/io dockerinpractice/alienate \
+http://mirrors.kernel.org/ubuntu/pool/main/libe/libeatmydata/eatmydata_26-2_i386.deb
+wgetting http://mirrors.kernel.org/ubuntu/pool/main/libe/libeatmydata/eatmydata_26-2_i386.deb
+--2015-02-26 10:57:28--  http://mirrors.kernel.org/ubuntu/pool/main/libe/libeatmydata/eatmydata_26-2_i386.deb
+Resolving mirrors.kernel.org (mirrors.kernel.org)... 198.145.20.143, 149.20.37.36, 2001:4f8:4:6f:0:1994:3:14, ...
+Connecting to mirrors.kernel.org (mirrors.kernel.org)|198.145.20.143|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7782 (7.6K) [application/octet-stream]
+Saving to: 'eatmydata_26-2_i386.deb'
+
+     0K .......                                               100% 2.58M=0.003s
+
+2015-02-26 10:57:28 (2.58 MB/s) - 'eatmydata_26-2_i386.deb' saved [7782/7782]
+
+Examining eatmydata_26-2_i386.deb from /io
+eatmydata_26-2_i386.deb appears to be a Debian package
+eatmydata-26-3.i386.rpm generated
+eatmydata-26.slp generated
+eatmydata-26.tgz generated
+=================================================================================
+/io now contains:
+eatmydata-26-3.i386.rpm
+eatmydata-26.slp
+eatmydata-26.tgz
+eatmydata_26-2_i386.deb
+=================================================================================
+$ ls -1
+eatmydata_26-2_i386.deb
+eatmydata-26-3.i386.rpm
+eatmydata-26.slp
+atmydata-26.tgz

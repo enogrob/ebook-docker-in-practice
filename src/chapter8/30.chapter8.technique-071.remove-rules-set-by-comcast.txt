@@ -1,0 +1,6 @@
+$ comcast -cont c1 -mode stop
+2015/07/29 02:31:34 Found interface vetha7b90a7 for container 'c1'
+[...]
+2015/07/29 02:31:34 Packet rules stopped...
+2015/07/29 02:31:34 Run `sudo tc -s qdisc` to double check
+2015/07/29 02:31:34 Run `comcast --mode start` to start

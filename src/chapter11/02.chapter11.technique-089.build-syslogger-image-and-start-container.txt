@@ -1,0 +1,2 @@
+docker build -t syslogger .
+docker run --name syslogger -d -v /tmp/syslogdev:/dev syslogger

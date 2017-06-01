@@ -1,0 +1,3 @@
+$ docker run -ti \
+-v /var/run/docker.sock:/var/run/docker.sock \
+dockerinpractice/shutit-s2i

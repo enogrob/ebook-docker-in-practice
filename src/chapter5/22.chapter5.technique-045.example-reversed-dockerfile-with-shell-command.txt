@@ -1,0 +1,19 @@
+MAINTAINER Jérôme Petazzoni <jerome@docker.com>
+ADD file:8cf517d90fe79547c474641cc1e6425850e04abbd8856718f7e4a184ea878538 in /
+CMD ["/bin/sh"]
+MAINTAINER ian.miell@gmail.com
+ENV myenvname=myenvvalue
+WORKDIR /opt
+mkdir -p copied
+COPY file:d0fb99565b15f8dfec37ea1cf3f9c4440b95b1766d179c11458e31b5d08a2ced in copied/Dockerfile
+mkdir -p added
+ADD file:d0fb99565b15f8dfec37ea1cf3f9c4440b95b1766d179c11458e31b5d08a2ced in added/Dockerfile
+touch /tmp/afile
+ADD file:d0fb99565b15f8dfec37ea1cf3f9c4440b95b1766d179c11458e31b5d08a2ced in /
+COPY dir:9cc240dcc0e31ce1b68951d230ee03fc6d3b834e2ae459f4ad7b7d023845e834 in /
+COPY file:97bc58d5eaefdf65278cf82674906836613be10af02e4c02c81f6c8c7eb44868 in /
+EXPOSE 80/tcp
+VOLUME [/data]
+ONBUILD touch /tmp/built
+ENTRYPOINT [/bin/sh -c /bin/bash]
+CMD [/bin/sh -c -r]

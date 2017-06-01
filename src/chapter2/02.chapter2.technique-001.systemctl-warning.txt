@@ -1,0 +1,3 @@
+The service command supports only basic LSB actions (start, stop, restart,
+try-restart, reload, force-reload, status). For other actions, please try
+to use systemctl.

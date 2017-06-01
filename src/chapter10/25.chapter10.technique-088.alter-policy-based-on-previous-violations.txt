@@ -1,0 +1,5 @@
+mkdir -p /root/selinux_policy_httpd_auto
+cd /root/selinux_policy_httpd_auto
+audit2allow -a -w
+audit2allow -a -M newmodname create policy
+semodule -i newmodname.pp

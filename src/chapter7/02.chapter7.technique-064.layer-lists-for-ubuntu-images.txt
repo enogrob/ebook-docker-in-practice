@@ -1,0 +1,19 @@
+$ docker pull ubuntu:14.04.1 && docker pull ubuntu:14.04.2
+[...]
+$ docker history ubuntu:14.04.1
+IMAGE         CREATED       CREATED BY                                      SIZE
+5ba9dab47459  3 months ago  /bin/sh -c #(nop) CMD [/bin/bash]               0 B
+51a9c7c1f8bb  3 months ago  /bin/sh -c sed -i 's/^#\s*\(deb.*universe\)$/   1.895 kB
+5f92234dcf1e  3 months ago  /bin/sh -c echo '#!/bin/sh' > /usr/sbin/polic   194.5 kB
+27d47432a69b  3 months ago  /bin/sh -c #(nop) ADD file:62400a49cced0d7521   188.1 MB
+511136ea3c5a  23 months ago                                                       0 B
+$ docker history ubuntu:14.04.2
+IMAGE         CREATED       CREATED BY                                      SIZE
+07f8e8c5e660  2 weeks ago   /bin/sh -c #(nop) CMD ["/bin/bash"]             0 B
+37bea4ee0c81  2 weeks ago   /bin/sh -c sed -i 's/^#\s*\(deb.*universe\)$/   1.895 kB
+a82efea989f9  2 weeks ago   /bin/sh -c echo '#!/bin/sh' > /usr/sbin/polic   194.5 kB
+e9e06b06e14c  2 weeks ago   /bin/sh -c #(nop) ADD file:f4d7b4b3402b5c53f2   188.1 MB
+$ docker save ubuntu:14.04.1 | gzip | wc -c
+65970990
+$ docker save ubuntu:14.04.2 | gzip | wc -c
+65978132

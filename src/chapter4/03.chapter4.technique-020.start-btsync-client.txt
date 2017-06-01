@@ -1,0 +1,10 @@
+[host2]$ docker run -d --name btsync-client -p 8888:8888 \
+-p 55555:55555 \
+ctlc/btsync ALSVEUABQQ5ILRS2OQJKAOKCU5SIIP6A3
+[host2]$ docker run -i -t --volumes-from btsync-client \
+ubuntu bash
+$ ls /data
+shared_from_server_one
+$ touch /data/shared_from_server_two
+$ ls /data
+shared_from_server_one  shared_from_server_two

@@ -1,0 +1,24 @@
+Sending build context to Docker daemon 422.9 kB
+Sending build context to Docker daemon
+Step 0 : FROM debian
+ ---> c90d655b99b2
+Step 1 : RUN mkdir -p /opt/libeatmydata
+ ---> Running in 6ac454c52962
+ ---> bdd948e413c1
+Removing intermediate container 6ac454c52962
+Step 2 : ADD \
+https://www.flamingspork.com/projects/libeatmydata/libeatmydata-105.tar.gz \
+/opt/libeatmydata/
+Downloading [==================================================>] \
+419.4 kB/419.4 kB
+ ---> 9d8758e90b64
+Removing intermediate container 02545663f13f
+Step 3 : RUN ls -lRt /opt/libeatmydata
+ ---> Running in a947eaa04b8e
+/opt/libeatmydata:
+total 412
+-rw------- 1 root root 419427 Jan  1  1970 \
+libeatmydata-105.tar.gz
+ ---> f18886c2418a
+Removing intermediate container a947eaa04b8e
+Successfully built f18886c2418a

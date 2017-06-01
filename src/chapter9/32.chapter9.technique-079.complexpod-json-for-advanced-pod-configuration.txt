@@ -1,0 +1,30 @@
+{
+  "id": "complexpod",
+  "kind": "Pod",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "manifest": {
+      "version": "v1beta1",
+      "id": "complexpod",
+      "containers": [{
+        "name": "simplereader",
+        "image": "dockerinpractice/simplereader",
+        "volumeMounts": [{
+          "mountPath": "/data",
+          "name": "pod-disk"
+        }]
+      },{
+        "name": "simplewriter",
+        "image": "dockerinpractice/simplewriter",
+        "volumeMounts": [{
+          "mountPath": "/data",
+          "name": "pod-disk"
+        }]
+      }],
+      "volumes": [{
+        "name": "pod-disk",
+        "emptydir": {}
+      }]
+    }
+  }
+}

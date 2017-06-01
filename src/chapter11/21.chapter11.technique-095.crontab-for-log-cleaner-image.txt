@@ -1,0 +1,4 @@
+0 0 * * * \
+IMG=dockerinpractice/log_cleaner && \
+docker pull $IMG && \
+docker run -v /var/log/myapplogs:/log_dir $IMG 1

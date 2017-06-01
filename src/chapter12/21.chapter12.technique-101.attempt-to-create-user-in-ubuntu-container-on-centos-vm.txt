@@ -1,0 +1,10 @@
+[root@centos vagrant]# docker run -ti ubuntu:12.04
+Unable to find image 'ubuntu:12.04' locally
+Pulling repository ubuntu
+78cef618c77e: Download complete
+b5da78899d3a: Download complete
+87183ecb6716: Download complete
+82ed8e312318: Download complete
+root@afade8b94d32:/# useradd -m -d /home/dockerinpractice dockerinpractice
+root@afade8b94d32:/# echo $?
+12

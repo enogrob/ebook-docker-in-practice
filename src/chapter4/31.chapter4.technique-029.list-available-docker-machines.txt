@@ -1,0 +1,4 @@
+$ docker-machine ls
+NAME   ACTIVE  DRIVER      STATE    URL                        SWARM
+host1          virtualbox  Running  tcp://192.168.99.102:2376
+host2  *       virtualbox  Running  tcp://192.168.99.103:2376

@@ -1,0 +1,2 @@
+FROM ubuntu:14.04
+RUN truncate --size 11G /root/file

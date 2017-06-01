@@ -1,0 +1,7 @@
+$ docker build -t hello_build .
+$ docker run --name hello hello_build /bin/true
+$ docker cp hello:/hi new_folder
+$ docker rm hello
+hello
+$ docker rmi hello_build
+Deleted: 6afcbf3a650d9d3a67c8d67c05a383e7602baecc9986854ef3e5b9c0069ae9f2

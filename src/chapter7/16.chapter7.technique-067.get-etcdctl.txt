@@ -1,0 +1,8 @@
+$ IMG=dockerinpractice/etcdctl
+$ docker pull dockerinpractice/etcdctl
+[...]
+$ alias etcdctl="docker run --rm $IMG -C \"$HTTPIP:8080\""
+$ etcdctl set /test value
+value
+$ etcdctl ls
+/test

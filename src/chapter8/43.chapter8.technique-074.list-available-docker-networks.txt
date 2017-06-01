@@ -1,0 +1,5 @@
+$ docker network ls
+NETWORK ID          NAME                TYPE
+04365ecf2eaa        none                null
+c82bde52597d        host                host
+7e8c8a0eab7d        bridge              bridge

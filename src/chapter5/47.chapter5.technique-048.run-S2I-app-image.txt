@@ -1,0 +1,2 @@
+$ docker run final-image-1
+Hello World

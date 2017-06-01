@@ -1,0 +1,15 @@
+$ docker build .
+Sending build context to Docker daemon 24.58 kB
+Sending build context to Docker daemon
+Step 0 : FROM ubuntu:14.04
+Pulling repository ubuntu
+d2a0ecffe6fa: Download complete
+83e4dde6b9cf: Download complete
+b670fb0c7ecd: Download complete
+29460ac93442: Download complete
+Status: Downloaded newer image for ubuntu:14.04
+ ---> d2a0ecffe6fa
+Step 1 : RUN truncate --size 11G /root/file
+ ---> Running in 77134fcbd040
+INFO[0200] ApplyLayer exit status 1 stdout:  stderr: write /root/file:
+no space left on device

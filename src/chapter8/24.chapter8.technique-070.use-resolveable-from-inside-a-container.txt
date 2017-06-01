@@ -1,0 +1,13 @@
+$ docker run -it --dns 172.17.42.1 ubuntu:14.04.2 bash
+root@216a71584c9c:/# ping -q -c1 res.docker
+PING res.docker (172.17.0.22) 56(84) bytes of data.
+
+--- res.docker ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.065/0.065/0.065/0.000 ms
+root@216a71584c9c:/# ping -q -c1 www.google.com
+PING www.google.com (216.58.210.36) 56(84) bytes of data.
+
+--- www.google.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 7.991/7.991/7.991/0.000 ms

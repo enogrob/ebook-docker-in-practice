@@ -1,0 +1,31 @@
+$ docker build --no-cache .
+Sending build context to Docker daemon  2.56 kB
+Sending build context to Docker daemon
+Step 0 : FROM node
+ ---> 91cbcf796c2c
+Step 1 : MAINTAINER ian.miell@gmail.com
+ ---> Running in ca243b77f6a1
+ ---> 602f1294d7f1
+Removing intermediate container ca243b77f6a1
+Step 2 : RUN git clone -q https://github.com/docker-in-practice/todo.git
+ ---> Running in f2c0ac021247
+ ---> 04ee24faaf18
+Removing intermediate container f2c0ac021247
+Step 3 : WORKDIR todo
+ ---> Running in c2d9cd32c182
+ ---> 4e0029de9074
+Removing intermediate container c2d9cd32c182
+Step 4 : RUN npm install > /dev/null
+ ---> Running in 79122dbf9e52
+npm WARN package.json todomvc-swarm@0.0.1 No repository field.
+ ---> 9b6531f2036a
+Removing intermediate container 79122dbf9e52
+Step 5 : EXPOSE 8000
+ ---> Running in d1d58e1c4b15
+ ---> f7c1b9151108
+Removing intermediate container d1d58e1c4b15
+Step 6 : CMD npm start
+ ---> Running in 697713ebb185
+ ---> 74f9ad384859
+Removing intermediate container 697713ebb185
+Successfully built 74f9ad384859

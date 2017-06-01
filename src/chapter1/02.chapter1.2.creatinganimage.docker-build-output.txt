@@ -1,0 +1,37 @@
+Sending build context to Docker daemon 178.7 kB
+Sending build context to Docker daemon 
+Step 0 : FROM node
+ ---> fc81e574af43
+Step 1 : MAINTAINER ian.miell@gmail.com
+ ---> Running in 21af1aad6950
+ ---> 8f32669fe435
+Removing intermediate container 21af1aad6950
+Step 2 : RUN git clone https://github.com/ianmiell/todo.git
+ ---> Running in 0a030ee746ea
+Cloning into 'todo'...
+ ---> 783c68b2e3fc
+Removing intermediate container 0a030ee746ea
+Step 3 : WORKDIR todo
+ ---> Running in 2e59f5df7152
+ ---> 8686b344b124
+Removing intermediate container 2e59f5df7152
+Step 4 : RUN npm install
+ ---> Running in bdf07a308fca
+npm info it worked if it ends with ok
+[...]
+npm info ok 
+ ---> 6cf8f3633306
+Removing intermediate container bdf07a308fca
+Step 5 : RUN chmod -R 777 /todo
+ ---> Running in c03f27789768
+ ---> 2c0ededd3a5e
+Removing intermediate container c03f27789768
+Step 6 : EXPOSE 8000
+ ---> Running in 46685ea97b8f
+ ---> f1c29feca036
+Removing intermediate container 46685ea97b8f
+Step 7 : CMD npm start
+ ---> Running in 7b4c1a9ed6af
+ ---> 439b172f994e
+Removing intermediate container 7b4c1a9ed6af
+Successfully built 439b172f994e

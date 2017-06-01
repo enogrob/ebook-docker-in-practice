@@ -1,0 +1,6 @@
+$ sudo systemctl enable /etc/systemd/system/sqliteserver.service
+ln -s '/etc/systemd/system/sqliteserver.service' \
+'/etc/systemd/system/multi-user.target.wants/sqliteserver.service'
+$ sudo systemctl enable /etc/systemd/system/sqliteproxy.service
+ln -s '/etc/systemd/system/sqliteproxy.service' \
+'/etc/systemd/system/multi-user.target.wants/sqliteproxy.service'

@@ -1,0 +1,20 @@
+$ git clone https://github.com/docker-in-practice/mesos-nc.git
+$ docker run -it --rm -v $(pwd)/mesos-nc:/opt redjack/mesos:0.21.0 bash
+# apt-get update && apt-get install -y python
+# cd /opt
+# export PYTHONUSERBASE=/usr/local
+# python myframework.py 172.17.0.2:5050
+I0312 02:11:07.642227   182 sched.cpp:137] Version: 0.21.0
+I0312 02:11:07.645598   176 sched.cpp:234] New master detected at master@172.17.0.2:5050
+I0312 02:11:07.645800   176 sched.cpp:242] No credentials provided. Attempting to register without authentication
+I0312 02:11:07.648449   176 sched.cpp:408] Framework registered with 20150312-014359-33558956-5050-1-0000
+Registered with framework ID 20150312-014359-33558956-5050-1-0000
+Received offer 20150312-014359-33558956-5050-1-O0. cpus: 4.0, mem: 6686.0, ports: 8000-8100
+Creating task 0
+Task 0 is in state TASK_RUNNING
+[...]
+Received offer 20150312-014359-33558956-5050-1-O5. cpus: 3.5, mem: 6586.0, ports: 8005-8100
+Creating task 5
+Task 5 is in state TASK_RUNNING
+Received offer 20150312-014359-33558956-5050-1-O6. cpus: 3.4, mem: 6566.0, ports: 8006-8100
+Declining offer

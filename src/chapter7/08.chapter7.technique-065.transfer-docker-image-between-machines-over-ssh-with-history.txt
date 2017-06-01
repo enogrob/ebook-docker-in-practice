@@ -1,0 +1,1 @@
+docker save debian:7.3 | ssh example.com docker load

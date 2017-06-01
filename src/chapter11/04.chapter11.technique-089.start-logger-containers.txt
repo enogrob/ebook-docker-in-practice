@@ -1,0 +1,4 @@
+for d in {1..100}
+do
+	docker run -d -v /tmp/syslogdev/log:/dev/log ubuntu logger hello_$d
+done

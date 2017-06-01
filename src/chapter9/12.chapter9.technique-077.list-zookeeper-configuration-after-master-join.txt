@@ -1,0 +1,6 @@
+[zk: localhost:2181(CONNECTED) 1] ls /
+[history, config, status, zookeeper]
+[zk: localhost:2181(CONNECTED) 2] ls /status/masters
+[896bc963d899]
+[zk: localhost:2181(CONNECTED) 3] ls /status/hosts
+[]

@@ -1,0 +1,2 @@
+docker ps -a -q --filter status=exited | \
+xargs --no-run-if-empty docker rm

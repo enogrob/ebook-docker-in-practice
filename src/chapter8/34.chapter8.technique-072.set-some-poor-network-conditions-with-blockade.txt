@@ -1,0 +1,9 @@
+$ blockade flaky --all
+$ sleep 5
+$ blockade slow client1
+$ blockade status
+NODE       CONTAINER ID    STATUS  IP              NETWORK    PARTITION
+client1    8c4d956cf9cf    UP      172.17.0.53     SLOW
+client2    fcd9af2b0eef    UP      172.17.0.54     FLAKY
+server     b8f9f179a10d    UP      172.17.0.52     FLAKY
+$ blockade fast --all

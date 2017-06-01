@@ -1,0 +1,3 @@
+$ docker build -t jenkins_swarm_slave .
+$ docker run -d --name \
+jenkins_swarm_slave jenkins_swarm_slave

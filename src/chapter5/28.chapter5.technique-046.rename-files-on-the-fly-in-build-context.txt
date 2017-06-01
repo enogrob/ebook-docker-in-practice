@@ -1,0 +1,3 @@
+base:
+    tar --transform 's/^deps\///' -cf - deps/* Dockerfile | \
+docker build -t corp/base .

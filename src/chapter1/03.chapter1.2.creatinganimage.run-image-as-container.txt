@@ -1,0 +1,66 @@
+docker run -p 8000:8000 --name example1 todoapp
+npm install
+npm info it worked if it ends with ok
+npm info using npm@2.14.4
+npm info using node@v4.1.1
+npm info prestart todomvc-swarm@0.0.1
+
+> todomvc-swarm@0.0.1 prestart /todo
+> make all
+
+npm install
+npm info it worked if it ends with ok
+npm info using npm@2.14.4
+npm info using node@v4.1.1
+npm WARN package.json todomvc-swarm@0.0.1 No repository field.
+npm WARN package.json todomvc-swarm@0.0.1 license should be a valid SPDX license expression
+npm info preinstall todomvc-swarm@0.0.1
+npm info package.json statics@0.1.0 license should be a valid SPDX license expression
+npm info package.json react-tools@0.11.2 No license field.
+npm info package.json react@0.11.2 No license field.
+npm info package.json node-jsx@0.11.0 license should be a valid SPDX license expression
+npm info package.json ws@0.4.32 No license field.
+npm info build /todo
+npm info linkStuff todomvc-swarm@0.0.1
+npm info install todomvc-swarm@0.0.1
+npm info postinstall todomvc-swarm@0.0.1
+npm info prepublish todomvc-swarm@0.0.1
+npm info ok 
+if [ ! -e dist/ ]; then mkdir dist; fi
+cp node_modules/react/dist/react.min.js dist/react.min.js
+
+LocalTodoApp.js:9:    // TODO: default english version
+LocalTodoApp.js:84:            fwdList = this.host.get('/TodoList#'+listId); // TODO fn+id sig
+TodoApp.js:117:        // TODO scroll into view
+TodoApp.js:176:        if (i>=list.length()) { i=list.length()-1; } // TODO .length
+local.html:30:    <!-- TODO 2-split, 3-split -->
+model/TodoList.js:29:        // TODO one op - repeated spec? long spec?
+view/Footer.jsx:61:        // TODO: show the entry's metadata
+view/Footer.jsx:80:            todoList.addObject(new TodoItem()); // TODO create default
+view/Header.jsx:25:        // TODO list some meaningful header (apart from the id)
+
+npm info start todomvc-swarm@0.0.1
+
+> todomvc-swarm@0.0.1 start /todo
+> node TodoAppServer.js
+
+Swarm server started port 8000
+^C
+$ docker ps -a
+CONTAINER ID  IMAGE           COMMAND      CREATED        STATUS                      PORTS  NAMES
+b9db5ada0461  todoapp:latest  "npm start"  2 minutes ago  Exited (130) 2 minutes ago         example1
+$ docker start example1
+example1
+$ docker ps -a
+CONTAINER ID  IMAGE           COMMAND      CREATED        STATUS         PORTS                   NAMES
+b9db5ada0461  todoapp:latest  "npm start"  8 minutes ago  Up 10 seconds  0.0.0.0:8000->8000/tcp  example1
+$ docker diff example1
+C /todo
+A /todo/.swarm
+A /todo/.swarm/TodoItem
+A /todo/.swarm/TodoItem/1tlOc02+A~4UZcz
+A /todo/.swarm/_log
+A /todo/dist
+A /todo/dist/LocalTodoApp.app.js
+A /todo/dist/TodoApp.app.js
+A /todo/dist/react.min.js

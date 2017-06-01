@@ -1,0 +1,8 @@
+$ kubectl get pods | egrep "(POD|todo)"
+POD         IP           CONTAINER(S)   IMAGE(S)                HOST                    LABELS              STATUS    CREATED         MESSAGE
+todo-2ip3n  10.246.2.2                                          10.245.1.4/10.245.1.4   run-container=todo  Running   10 minutes
+                         todo           dockerinpractice/todo                                               Running   8 minutes
+todo-4os5b  10.246.1.3                                          10.245.1.3/10.245.1.3   run-container=todo  Running   2 minutes
+                         todo           dockerinpractice/todo                                               Running   48 seconds
+todo-cuggp  10.246.2.3                                          10.245.1.4/10.245.1.4   run-container=todo  Running   2 minutes
+                         todo           dockerinpractice/todo                                               Running   2 minutes

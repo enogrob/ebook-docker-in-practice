@@ -1,0 +1,8 @@
+$ docker-compose up
+Creating dockercompose_server_1...
+Creating dockercompose_client_1...
+Attaching to dockercompose_server_1, dockercompose_client_1
+client_1 | Received: Hello, world
+client_1 |
+client_1 | Received: Hello, world
+client_1 |

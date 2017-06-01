@@ -1,0 +1,2 @@
+base:
+    docker build -t corp/base .

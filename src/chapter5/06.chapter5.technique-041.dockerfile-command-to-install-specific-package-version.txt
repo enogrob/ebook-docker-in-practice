@@ -1,0 +1,1 @@
+RUN apt-get -y install nginx=1.4.6-1ubuntu3

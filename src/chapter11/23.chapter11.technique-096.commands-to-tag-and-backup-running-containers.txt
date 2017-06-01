@@ -1,0 +1,6 @@
+REG="your_log_registry:5000"
+AUTHOR="Backup Admin"
+DATE=$(date +%Y%m%d_%H%M%S)
+TAG="$REG/live_pmt_svr_backup:$(hostname -s)_${DATE}"
+docker commit -m="$DATE" -a="$AUTHOR" live_pmt_svr $TAG
+docker push $TAG

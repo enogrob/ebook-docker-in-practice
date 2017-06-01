@@ -1,0 +1,4 @@
+$ docker build -t go-web-server .
+$ mkdir -p go-web-server && cd go-web-server
+$ docker run go-web-server > go-web-server
+$ chmod +x go-web-server

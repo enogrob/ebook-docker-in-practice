@@ -1,0 +1,10 @@
+$ docker network create --driver=bridge mynet
+3265097deff3847cb1f7b8e8bc924bae1c439d8bf6247458400e620b35447292
+$ docker network ls | grep mynet
+3265097deff3        mynet               bridge
+$ ip addr | grep mynet
+34: mynet: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN
+    inet 172.18.42.1/16 scope global mynet
+$ ip addr | grep docker
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN
+    inet 172.17.42.1/16 scope global docker0

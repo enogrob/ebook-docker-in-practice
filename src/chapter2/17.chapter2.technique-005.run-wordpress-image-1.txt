@@ -1,0 +1,1 @@
+$ docker run -d -p 10001:80 --name blog1 tutum/wordpress

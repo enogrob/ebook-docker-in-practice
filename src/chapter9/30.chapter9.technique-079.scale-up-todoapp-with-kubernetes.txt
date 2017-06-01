@@ -1,0 +1,2 @@
+$ kubectl resize --replicas=3 replicationController todo
+resized

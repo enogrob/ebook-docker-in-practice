@@ -1,0 +1,16 @@
+FROM busybox
+MAINTAINER ian.miell@gmail.com
+ENV myenvname myenvvalue
+LABEL mylabelname mylabelvalue
+WORKDIR /opt
+RUN mkdir -p copied
+COPY Dockerfile copied/Dockerfile
+RUN mkdir -p added
+ADD Dockerfile added/Dockerfile
+RUN touch /tmp/afile
+ADD Dockerfile /
+EXPOSE 80
+VOLUME /data
+ONBUILD touch /tmp/built
+ENTRYPOINT /bin/bash
+CMD -r

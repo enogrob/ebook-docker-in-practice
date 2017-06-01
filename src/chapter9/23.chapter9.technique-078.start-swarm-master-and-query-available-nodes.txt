@@ -1,0 +1,11 @@
+h1 $ docker run -d -p 4000:2375 swarm manage token://$CLUSTER_ID
+04227ba0c472000bafac8499e2b67b5f0629a80615bb8c2691c6ceda242a1dd0
+h1 $ docker -H tcp://localhost:4000 info
+Containers: 10
+Strategy: spread
+Filters: affinity, health, constraint, port, dependency
+Nodes: 1
+ h1: 10.194.12.221:2375
+  └ Containers: 2
+  └ Reserved CPUs: 0 / 4
+  └ Reserved Memory: 0 B / 7.907 GiB

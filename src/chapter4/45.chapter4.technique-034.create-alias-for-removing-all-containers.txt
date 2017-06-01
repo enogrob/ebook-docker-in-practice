@@ -1,0 +1,2 @@
+alias dockernuke='docker ps -a -q | \
+xargs --no-run-if-empty docker rm -f'

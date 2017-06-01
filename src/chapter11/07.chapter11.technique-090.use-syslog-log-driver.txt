@@ -1,0 +1,2 @@
+$ docker run --log-driver=syslog ubuntu echo 'outputting to syslog'
+outputting to syslog

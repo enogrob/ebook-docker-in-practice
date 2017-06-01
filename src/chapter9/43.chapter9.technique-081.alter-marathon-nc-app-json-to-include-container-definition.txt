@@ -1,0 +1,15 @@
+$ JQ=https://github.com/stedolan/jq/releases/download/jq-1.3/jq-linux-x86_64
+$ curl -Os $JQ && mv jq-linux-x86_64 jq && chmod +x jq
+$ cat >container.json <<EOF
+{
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "ubuntu:14.04.2",
+      "network": "BRIDGE",
+      "portMappings": [{"hostPort": 8000, "containerPort": 8000}]
+    }
+  }
+}
+$ # merge the app and container details
+$ cat app.json container.json | ./jq -s add > newapp.json

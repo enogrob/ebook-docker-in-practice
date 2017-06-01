@@ -1,0 +1,26 @@
+$ curl -sSL 172.17.42.1:8500/v1/catalog/services | python -m json.tool
+{
+    "consul": []
+}
+$ docker run -d -e "SERVICE_NAME=files" -p 8000:80 ubuntu:14.04.2 python3 \
+-m http.server 80
+3126a8668d7a058333d613f7995954f1919b314705589a9cd8b4e367d4092c9b
+$ docker inspect 3126a8668d7a | grep 'Name.*/'
+    "Name": "/evil_hopper",
+$ curl -sSL 172.17.42.1:8500/v1/catalog/services | python -m json.tool
+{
+    "consul": [],
+    "files": []
+}
+$ curl -sSL 172.17.42.1:8500/v1/catalog/service/files | python -m json.tool
+[
+    {
+        "Address": "192.168.1.80",
+        "Node": "mylaptop2",
+        "ServiceAddress": "192.168.1.80",
+        "ServiceID": "mylaptop2-reg:evil_hopper:80",
+        "ServiceName": "files",
+        "ServicePort": 8000,
+        "ServiceTags": null
+    }
+]

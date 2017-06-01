@@ -1,0 +1,11 @@
+root@0749a2e74a68:/# ping -q -c 5 www.docker.com
+PING www.docker.com (104.239.220.248) 56(84) bytes of data.
+
+--- www.docker.com ping statistics ---
+5 packets transmitted, 2 received, 60% packet loss, time 4001ms
+rtt min/avg/max/mdev = 200.453/200.581/200.709/0.128 ms
+root@0749a2e74a68:/# time wget -o /dev/null https://www.docker.com
+
+real    0m9.673s
+user    0m0.011s
+sys     0m0.011s

@@ -1,0 +1,1 @@
+docker top <container_id> -eo pid,size,args

@@ -1,0 +1,7 @@
+$ IMG=dockerinpractice/blockade
+$ docker pull $IMG
+latest: Pulling from dockerinpractice/blockade
+[...]
+Status: Downloaded newer image for dockerinpractice/blockade:latest
+$ alias blockade="docker run --rm --pid=host --privileged \
+-v \$PWD:/blockade -v /var/run/docker.sock:/var/run/docker.sock $IMG"

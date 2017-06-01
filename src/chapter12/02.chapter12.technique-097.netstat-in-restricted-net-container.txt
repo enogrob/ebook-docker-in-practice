@@ -1,0 +1,7 @@
+host$ docker run -ti ubuntu
+root@b1c4877a00cd:/# netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+root@b1c4877a00cd:/#

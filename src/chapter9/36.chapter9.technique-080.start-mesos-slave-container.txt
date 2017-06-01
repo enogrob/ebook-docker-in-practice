@@ -1,0 +1,18 @@
+$ docker run -d --name messlave --pid=host \
+  -v /var/run/docker.sock:/var/run/docker.sock -v /sys:/sys \
+  redjack/mesos:0.21.0 mesos-slave \
+  --master=172.17.0.2:5050 --executor_registration_timeout=5mins \
+  --isolation=cgroups/cpu,cgroups/mem --containerizers=docker,mesos \
+  --resources="ports(*):[8000-8100]"
+1b88c414527f63e24241691a96e3e3251fbb24996f3bfba3ebba91d7a541a9f5
+$ docker inspect -f '{{.NetworkSettings.IPAddress}}' messlave
+172.17.0.3
+$ docker logs -f messlave
+I0312 01:46:43.341621 32398 main.cpp:142] Build: 2014-11-22 05:29:57 by root
+I0312 01:46:43.341789 32398 main.cpp:144] Version: 0.21.0
+I0312 01:46:43.341795 32398 main.cpp:147] Git tag: 0.21.0
+[...]
+I0312 01:46:43.554498 32429 slave.cpp:627] No credentials provided. Attempting to register without authentication
+I0312 01:46:43.554633 32429 slave.cpp:638] Detecting new master
+I0312 01:46:44.419646 32424 slave.cpp:756] Registered with master master@172.17.0.2:5050; given slave ID 20150312-014359-33558956-5050-1-S0
+[...]

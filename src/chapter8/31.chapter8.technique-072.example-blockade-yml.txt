@@ -1,0 +1,19 @@
+containers:
+  server:
+    image: ubuntu:14.04.2
+    command: /bin/sleep infinity
+    expose: [10000]
+
+  client1:
+    image: ubuntu:14.04.2
+    command: sh -c "ping $SERVER_PORT_10000_TCP_ADDR"
+    links: ["server"]
+
+  client2:
+    image: ubuntu:14.04.2
+    command: sh -c "ping $SERVER_PORT_10000_TCP_ADDR"
+    links: ["server"]
+
+network:
+  flaky: 50%
+  slow: 100ms

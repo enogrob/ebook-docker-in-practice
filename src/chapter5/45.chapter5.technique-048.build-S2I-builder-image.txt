@@ -1,0 +1,23 @@
+$ make
+imiell@osboxes:/space/git/sti-simple-shell$ make
+docker build --no-cache -t sti-simple-shell .
+Sending build context to Docker daemon 153.1 kB
+Sending build context to Docker daemon
+Step 0 : FROM openshift/base-centos7
+ ---> f20de2f94385
+Step 1 : RUN chown -R default:default /opt/openshift
+ ---> Running in f25904e8f204
+ ---> 3fb9a927c2f1
+Removing intermediate container f25904e8f204
+Step 2 : COPY ./.sti/bin /usr/local/sti
+ ---> c8a73262914e
+Removing intermediate container 93ab040d323e
+Step 3 : RUN chmod +x /usr/local/sti/*
+ ---> Running in d71fab9bbae8
+ ---> 39e81901d87c
+Removing intermediate container d71fab9bbae8
+Step 4 : USER default
+ ---> Running in 5d305966309f
+ ---> ca3f5e3edc32
+Removing intermediate container 5d305966309f
+Successfully built ca3f5e3edc32

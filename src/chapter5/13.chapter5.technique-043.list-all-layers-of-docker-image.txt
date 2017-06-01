@@ -1,0 +1,8 @@
+$ docker history mysecret
+IMAGE         CREATED             CREATED BY                                      SIZE
+55f3c131a35d  25 seconds ago      /bin/sh -c rm /tmp/secret_key                   0 B
+5b376ff3d7cd  26 seconds ago      /bin/sh -c cat /tmp/secret_key                  0 B
+5e39caf7560f  27 seconds ago      /bin/sh -c echo "My Big Secret" >> /tmp/secre   14 B
+c90d655b99b2  2 weeks ago         /bin/sh -c #(nop) CMD [/bin/bash]               0 B
+30d39e59ffe2  2 weeks ago         /bin/sh -c #(nop) ADD file:3f1a40df75bc5673ce   85.01 MB
+511136ea3c5a  20 months ago                                                       0 B

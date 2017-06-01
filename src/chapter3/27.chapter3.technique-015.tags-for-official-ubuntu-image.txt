@@ -1,0 +1,6 @@
+$ docker images
+REPOSITORY  TAG    IMAGE ID   CREATED       VIRTUAL SIZE
+ubuntu          trusty     8eaa4ff06b53   4 weeks ago   192.7 MB
+ubuntu          14.04      8eaa4ff06b53   4 weeks ago   192.7 MB
+ubuntu          14.04.1    8eaa4ff06b53   4 weeks ago   192.7 MB
+ubuntu          latest     8eaa4ff06b53   4 weeks ago   192.7 MB

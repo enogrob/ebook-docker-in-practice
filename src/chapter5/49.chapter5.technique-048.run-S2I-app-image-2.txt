@@ -1,0 +1,2 @@
+$ docker run final-image-2
+Hello S21!

@@ -1,0 +1,7 @@
+$ docker run -ti busybox /bin/bash
+FATA[0000] Error response from daemon: Cannot start container a81e7e6b2c030c29565ef7adb94de20ad516a6697deeeb617604e652e979fda6: exec: "/bin/bash": stat /bin/bash: no such file or directory
+$ CID=$(docker run -d busybox sleep 9999)
+$ PID=$(docker inspect --format {{.State.Pid}} $CID)
+$ sudo nsenter --target $PID \
+--uts --ipc --net /bin/bash
+root@781c1fed2b18:~#

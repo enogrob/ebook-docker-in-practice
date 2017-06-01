@@ -1,0 +1,5 @@
+$ IMG=dockerinpractice/confd-nginx
+$ docker pull $IMG
+[...]
+$ docker run -d --name nginx -p 8000:80 $IMG $HTTPIP:8080
+5a0b176586ef9e3514c5826f17d7f78ba8090537794cef06160ea7310728f7dc

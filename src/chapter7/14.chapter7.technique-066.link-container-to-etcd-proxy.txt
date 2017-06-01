@@ -1,0 +1,4 @@
+$ docker run -it --rm --link etcd-proxy:etcd ubuntu:14.04.2 bash
+root@8df11eaae71e:/# apt-get install -y wget
+root@8df11eaae71e:/# wget -q -O- http://etcd:8080/v2/keys/mykey3
+{"action":"get","node": {"key":"/mykey3","value":"t","modifiedIndex":16,"createdIndex":16}}

@@ -1,0 +1,14 @@
+# strace -f \
+useradd -m -d /home/dockerinpractice dockerinpractice
+execve("/usr/sbin/useradd", ["useradd", "-m", "-d", "/home/dockerinpractice", "dockerinpractice"], [/* 9 vars */]) = 0
+[...]
+open("/proc/self/task/39/attr/current", O_RDONLY) = 9
+read(9, "system_u:system_r:svirt_lxc_net_"..., 4095) = 46
+close(9)                                = 0
+[...]
+open("/etc/selinux/config", O_RDONLY)   = -1 ENOENT (No such file or directory)
+open("/etc/selinux/targeted/contexts/files/ file_contexts.subs_dist", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/etc/selinux/targeted/contexts/files/ file_contexts.subs", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/etc/selinux/targeted/contexts/files/ file_contexts", O_RDONLY) = -1 ENOENT (No such file or directory)
+[...]
+exit_group(12)                          = ?

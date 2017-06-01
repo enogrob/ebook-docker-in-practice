@@ -1,0 +1,2 @@
+base:
+    tar -cvf - file1 file2 Dockerfile | docker build -t corp/base .

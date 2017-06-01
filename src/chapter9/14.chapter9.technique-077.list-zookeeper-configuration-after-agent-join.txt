@@ -1,0 +1,7 @@
+[zk: localhost:2181(CONNECTED) 4] ls /status/hosts
+[5a4abcb27107]
+[zk: localhost:2181(CONNECTED) 5] ls /status/hosts/5a4abcb27107
+[agentinfo, jobs, environment, hostinfo, up]
+[zk: localhost:2181(CONNECTED) 6] get /status/hosts/5a4abcb27107/agentinfo
+{"inputArguments":["-Dcom.sun.management.jmxremote.port=9203", [...]
+[...]

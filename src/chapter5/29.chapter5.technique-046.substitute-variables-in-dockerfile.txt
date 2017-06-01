@@ -1,0 +1,5 @@
+VAR1 ?= defaultvalue
+base:
+    cp Dockerfile.in Dockerfile
+    sed -i 's/{VAR1}/$(VAR1)/' Dockerfile
+    docker build -t corp/base .

@@ -1,0 +1,14 @@
+$ telnet localhost 1234
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+hello daemon
+^]
+
+telnet> q
+Connection closed.
+$ docker logs daemon
+hello daemon
+$ docker rm daemon
+daemon
+$

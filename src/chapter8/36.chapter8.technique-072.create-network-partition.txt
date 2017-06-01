@@ -1,0 +1,6 @@
+$ blockade partition server client1,client2
+$ blockade status
+NODE       CONTAINER ID    STATUS  IP              NETWORK    PARTITION
+client1    8c4d956cf9cf    UP      172.17.0.53     NORMAL     2
+client2    fcd9af2b0eef    UP      172.17.0.54     NORMAL     2
+server     b8f9f179a10d    UP      172.17.0.52     NORMAL     1

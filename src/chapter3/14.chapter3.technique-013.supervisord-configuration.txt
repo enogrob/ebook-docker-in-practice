@@ -1,0 +1,13 @@
+[supervisord]
+nodaemon=true
+
+# apache
+[program:apache2]
+command=/bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
+
+# tomcat
+[program:tomcat]
+command=service start tomcat
+redirect_stderr=true
+stdout_logfile=/var/log/tomcat/supervisor.log
+stderr_logfile=/var/log/tomcat/supervisor.error_log

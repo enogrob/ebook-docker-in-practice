@@ -1,0 +1,4 @@
+$ docker run --name zookeeper -d jplock/zookeeper:3.4.6
+cd0964d2ba18baac58b29081b227f15e05f11644adfa785c6e9fc5dd15b85910
+$ docker inspect -f '{{.NetworkSettings.IPAddress}}' zookeeper
+172.17.0.9

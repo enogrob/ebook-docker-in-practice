@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Cleaning logs over $1 days old"
+find /log_dir -ctime "$1" -name '*log' -exec rm {} \;

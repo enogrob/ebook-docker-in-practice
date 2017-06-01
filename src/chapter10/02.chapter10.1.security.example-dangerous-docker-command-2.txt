@@ -1,0 +1,1 @@
+docker run -v /etc/shadow:/etc/shadow busybox cat /etc/shadow

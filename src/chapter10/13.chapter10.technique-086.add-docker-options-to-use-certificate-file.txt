@@ -1,0 +1,10 @@
+DOCKER_OPTS="$DOCKER_OPTS --tlsverify"
+DOCKER_OPTS="$DOCKER_OPTS \
+--tlscacert=/etc/docker/ca.pem"
+DOCKER_OPTS="$DOCKER_OPTS \
+--tlscert=/etc/docker/server-cert.pem"
+DOCKER_OPTS="$DOCKER_OPTS \
+--tlskey=/etc/docker/server-key.pem"
+DOCKER_OPTS="$DOCKER_OPTS -H tcp://0.0.0.0:2376"
+DOCKER_OPTS="$DOCKER_OPTS \
+-H unix:///var/run/docker.sock"

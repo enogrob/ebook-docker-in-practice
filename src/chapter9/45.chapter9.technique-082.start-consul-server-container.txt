@@ -1,0 +1,22 @@
+c1 $ IMG=dockerinpractice/consul-server
+c1 $ docker pull $IMG
+[...]
+c1 $ ip addr | grep 'inet ' | grep -v 'lo$\|docker0$\|vbox.*$'
+    inet 192.168.1.87/24 brd 192.168.1.255 scope global wlan0
+c1 $ EXTIP1=192.168.1.87
+c1 $ echo '{"ports": {"dns": 53}}' > dns.json
+c1 $ docker run -d --name consul --net host \
+-v $(pwd)/dns.json:/config/dns.json $IMG -bind $EXTIP1 -client $EXTIP1 \
+-recursor 8.8.8.8 -recursor 8.8.4.4 -bootstrap-expect 1
+88d5cb48b8b1ef9ada754f97f024a9ba691279e1a863fa95fa196539555310c1
+c1 $ docker logs consul
+[...]
+       Client Addr: 192.168.1.87 (HTTP: 8500, HTTPS: -1, DNS: 53, RPC: 8400)
+      Cluster Addr: 192.168.1.87 (LAN: 8301, WAN: 8302)
+[...]
+==> Log data will now stream in as it occurs:
+
+    2015/08/14 12:35:41 [INFO] serf: EventMemberJoin: mylaptop 192.168.1.87
+[...]
+    2015/08/14 12:35:43 [INFO] consul: member 'mylaptop' joined, marking health alive
+    2015/08/14 12:35:43 [INFO] agent: Synced service 'consul'

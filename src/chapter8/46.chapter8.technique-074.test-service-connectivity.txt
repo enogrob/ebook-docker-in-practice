@@ -1,0 +1,19 @@
+$ docker exec c1 ip addr | grep 'inet.*eth'
+    inet 172.17.0.6/16 scope global eth0
+    inet 172.18.0.5/16 scope global eth1
+$ docker exec c2 ip addr | grep 'inet.*eth'
+    inet 172.18.0.6/16 scope global eth0
+$ docker exec c1 ping -qc1 c2service
+ping: unknown host c2service
+$ docker exec c1 ping -qc1 172.18.0.6
+PING 172.18.0.6 (172.18.0.6) 56(84) bytes of data.
+
+--- 172.18.0.6 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.069/0.069/0.069/0.000 ms
+$ docker exec c2 ping -qc1 c1service
+PING c1service (172.18.0.5) 56(84) bytes of data.
+
+--- c1service ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.084/0.084/0.084/0.000 ms

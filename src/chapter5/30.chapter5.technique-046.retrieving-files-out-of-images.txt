@@ -1,0 +1,5 @@
+singlefile: base
+    docker run --rm corp/base cat /path/to/myfile > outfile
+multifile: base
+    docker run --rm -v $(pwd)/outdir:/out corp/base sh \
+-c "cp -r /path/to/dir/* /out/"

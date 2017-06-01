@@ -1,0 +1,3 @@
+$ dbup load ubuntu:14.04.1
+Loading image!
+Done!

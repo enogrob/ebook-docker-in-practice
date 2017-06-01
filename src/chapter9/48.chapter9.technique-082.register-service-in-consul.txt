@@ -1,0 +1,12 @@
+c2 $ docker run -d --name files -p 8000:80 ubuntu:14.04.2 \
+python3 -m http.server 80
+96ee81148154a75bc5c8a83e3b3d11b73d738417974eed4e019b26027787e9d1
+c2 $ docker inspect -f '{{.NetworkSettings.IPAddress}}' files
+172.17.0.16
+c2 $ /bin/echo -e 'GET / HTTP/1.0\r\n\r\n' | nc -i1 172.17.0.16 80 \
+| head -n 1
+HTTP/1.0 200 OK
+c2 $ curl -X PUT --data-binary '{"Name": "files", "Port": 8000}' \
+$BRIDGEIP:8500/v1/agent/service/register
+c2 $ docker logs consul-client | tail -n 1
+    2015/08/15 03:44:30 [INFO] agent: Synced service 'files'

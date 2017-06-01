@@ -1,0 +1,9 @@
+$ IMG=dockerinpractice/docker-helios
+$ docker run -d --name hmaster $IMG helios-master --zk 172.17.0.9
+896bc963d899154436938e260b1d4e6fdb0a81e4a082df50043290569e5921ff
+$ docker logs --tail=3 hmaster
+03:20:14.460 helios[1]: INFO  [MasterService STARTING] ContextHandler: Started i.d.j.MutableServletContextHandler@7b48d370{/,null,AVAILABLE}
+03:20:14.465 helios[1]: INFO  [MasterService STARTING] ServerConnector: Started application@2192bcac{HTTP/1.1}{0.0.0.0:5801}
+03:20:14.466 helios[1]: INFO  [MasterService STARTING] ServerConnector: Started admin@28a0d16c{HTTP/1.1}{0.0.0.0:5802}
+$ docker inspect -f '{{.NetworkSettings.IPAddress}}' hmaster
+172.17.0.11

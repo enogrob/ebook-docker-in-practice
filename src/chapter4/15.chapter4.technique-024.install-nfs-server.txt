@@ -1,0 +1,3 @@
+# apt-get install nfs-kernel-server
+# mkdir /export
+# chmod 777 /export

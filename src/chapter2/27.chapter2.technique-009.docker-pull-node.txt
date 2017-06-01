@@ -1,0 +1,16 @@
+$ docker pull node
+node:latest: The image you are pulling has been verified
+81c86d8c1e0c: Downloading
+81c86d8c1e0c: Pull complete
+3a20d8faf171: Pull complete
+c7a7a01d634e: Pull complete
+2a13c2a76de1: Pull complete
+4cc808131c54: Pull complete
+bf2afba3f5e4: Pull complete
+0cba665db8d0: Pull complete
+322af6f234b2: Pull complete
+9787c55efe92: Pull complete
+511136ea3c5a: Already exists
+bce696e097dc: Already exists
+58052b122b60: Already exists
+Status: Downloaded newer image for node:latest

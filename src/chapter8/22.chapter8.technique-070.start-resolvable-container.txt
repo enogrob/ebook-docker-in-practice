@@ -1,0 +1,6 @@
+$ DNSARGS="--dns 8.8.8.8 --dns 8.8.4.4"
+$ PORTARGS="-p 172.17.42.1:53:53/udp"
+$ VOLARGS="-v /var/run/docker.sock:/tmp/docker.sock"
+$ docker run -d --name res -h resolvable $DNSARGS $PORTARGS $VOLARGS \
+gliderlabs/resolvable:master
+5ebbe218b297da6390b8f05c0217613e47f46fe46c04be919e415a5a1763fb11

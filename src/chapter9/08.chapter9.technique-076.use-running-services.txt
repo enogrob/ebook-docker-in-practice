@@ -1,0 +1,12 @@
+$ sudo systemctl start sqliteproxy
+$ telnet localhost 12346
+[vagrant@centos ~]$ telnet localhost 12346
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+SQLite version 3.8.2 2013-12-06 14:53:30
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> select * from t1;
+select * from t1;
+test

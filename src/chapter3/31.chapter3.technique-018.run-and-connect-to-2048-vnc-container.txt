@@ -1,0 +1,3 @@
+$ docker run -d -p 5901:5901 -p 6080:6080 --name win2048 \
+  imiell/win2048
+$ vncviewer localhost:1

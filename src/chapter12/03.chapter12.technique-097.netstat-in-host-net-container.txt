@@ -1,0 +1,13 @@
+$ docker run -ti --net=host ubuntu
+root@host:/# netstat -nap | head
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address   Foreign Address State       PID/Program name
+tcp        0      0 127.0.0.1:47116 0.0.0.0:*       LISTEN      -
+tcp        0      0 127.0.1.1:53    0.0.0.0:*       LISTEN      -
+tcp        0      0 127.0.0.1:631   0.0.0.0:*       LISTEN      -
+tcp        0      0 0.0.0.0:3000    0.0.0.0:*       LISTEN      -
+tcp        0      0 127.0.0.1:54366 0.0.0.0:*       LISTEN      -
+tcp        0      0 127.0.0.1:32888 127.0.0.1:47116 ESTABLISHED -
+tcp        0      0 127.0.0.1:32889 127.0.0.1:47116 ESTABLISHED -
+tcp        0      0 127.0.0.1:47116 127.0.0.1:32888 ESTABLISHED -
+root@host:/#

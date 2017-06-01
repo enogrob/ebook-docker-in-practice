@@ -1,0 +1,2 @@
+$ docker exec syslogger bash -c "cat /var/log/syslog | \
+grep '^May 25 11'" | xz - > /var/log/archive/May25_11.log.xz

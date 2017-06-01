@@ -1,0 +1,26 @@
+c2 $ docker exec consul-client sh -c 'apk update && apk add jq'
+fetch http://dl-4.alpinelinux.org/alpine/v3.2/main/x86_64/APKINDEX.tar.gz
+v3.2.3 [http://dl-4.alpinelinux.org/alpine/v3.2/main]
+OK: 5289 distinct packages available
+(1/1) Installing jq (1.4-r0)
+Executing busybox-1.23.2-r0.trigger
+OK: 14 MiB in 28 packages
+c2 $ docker exec consul-client sh -c \
+'wget -qO - 172.17.42.1:8500/v1/agent/services | jq ".files.Port"'
+8000
+c2 $ sleep 15
+c2 $ curl -sSL 172.17.42.1:8500/v1/health/service/files | \
+python -m json.tool | head -n 13
+[
+    {
+        "Checks": [
+            {
+                "CheckID": "filescheck",
+                "Name": "filescheck",
+                "Node": "mylaptop2",
+                "Notes": "",
+                "Output": "Success!\n",
+                "ServiceID": "files",
+                "ServiceName": "files",
+                "Status": "passing"
+            },

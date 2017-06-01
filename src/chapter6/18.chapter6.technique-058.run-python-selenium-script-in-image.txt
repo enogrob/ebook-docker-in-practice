@@ -1,0 +1,13 @@
+$ docker run --rm -v $(pwd):/mnt selenium sh -c \
+"xvfb-run -s '-screen 0 1024x768x24 -extension RANDR'\
+python /mnt/myscript.py"
+Visiting github
+Performing search
+Switching to user search
+Opening docker in practice user page
+Traceback (most recent call last):
+  File "myscript.py", line 15, in <module>
+      dlink = b.find_elements_by_css_selector(dlinkselector)[99]
+      IndexError: list index out of range
+$ echo $?
+1

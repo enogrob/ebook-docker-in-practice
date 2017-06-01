@@ -1,0 +1,1 @@
+perl -p -i -e 's@/usr/share/www@/var/www/html/@g' /etc/apache2/*

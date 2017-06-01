@@ -1,0 +1,2 @@
+$ docker run -d --name docker-authenticate -p 2375:2375 \
+  -v /var/run:/var/run dockerinpractice/docker-authenticate

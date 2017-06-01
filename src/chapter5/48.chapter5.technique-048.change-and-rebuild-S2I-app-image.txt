@@ -1,0 +1,5 @@
+$ cd /root/myproject
+$ cat > app.sh <<< "echo 'Hello S2I!'"
+$ git commit -am 'new message'
+$ sti build --force-pull=false file:///root/myproject sti-simple-shell \
+  final-image-2

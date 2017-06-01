@@ -1,0 +1,4 @@
+$ telnet localhost 8000
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.

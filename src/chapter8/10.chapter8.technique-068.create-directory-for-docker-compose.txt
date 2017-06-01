@@ -1,0 +1,3 @@
+cd ..
+mkdir docker-compose
+cd docker-compose

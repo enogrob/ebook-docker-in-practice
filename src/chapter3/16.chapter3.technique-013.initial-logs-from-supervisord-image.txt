@@ -1,0 +1,11 @@
+$ docker run -p 9000:80 --name supervised supervised
+2015-02-06 10:42:20,336 CRIT Supervisor running as root (no user in config file)
+2015-02-06 10:42:20,344 INFO RPC interface 'supervisor' initialized
+2015-02-06 10:42:20,344 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2015-02-06 10:42:20,344 INFO supervisord started with pid 1
+2015-02-06 10:42:21,346 INFO spawned: 'tomcat' with pid 12
+2015-02-06 10:42:21,348 INFO spawned: 'apache2' with pid 13
+2015-02-06 10:42:21,368 INFO reaped unknown pid 29
+2015-02-06 10:42:21,403 INFO reaped unknown pid 30
+2015-02-06 10:42:22,404 INFO success: tomcat entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-02-06 10:42:22,404 INFO success: apache2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

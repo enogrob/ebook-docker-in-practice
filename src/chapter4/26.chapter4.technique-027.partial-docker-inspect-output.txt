@@ -1,0 +1,12 @@
+$ docker inspect ubuntu | head
+[{
+    "Architecture": "amd64",
+    "Author": "",
+    "Comment": "",
+    "Config": {
+        "AttachStderr": false,
+        "AttachStdin": false,
+        "AttachStdout": false,
+        "Cmd": [
+            "/bin/bash"
+$

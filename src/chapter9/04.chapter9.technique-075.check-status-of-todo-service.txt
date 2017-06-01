@@ -1,0 +1,31 @@
+[root@centos system]# systemctl status todo.service
+todo.service - Simple ToDo Application
+   Loaded: loaded (/etc/systemd/system/todo.service; enabled)
+   Active: active (running) since Wed 2015-03-04 19:57:19 UTC; 2min 13s ago
+  Process: 21266 ExecStartPre=/usr/bin/docker pull dockerinpractice/todo \
+(code=exited, status=0/SUCCESS)
+  Process: 21255 ExecStartPre=/bin/bash -c /usr/bin/docker rm -f todo || \
+/bin/true (code=exited, status=0/SUCCESS)
+  Process: 21246 ExecStartPre=/bin/bash -c /usr/bin/docker kill todo || \
+/bin/true (code=exited, status=0/SUCCESS)
+ Main PID: 21275 (docker)
+   CGroup: /system.slice/todo.service
+           └─21275 /usr/bin/docker run --name todo -p 8000:8000 dockerinpractice/todo
+
+Mar 04 19:57:24 centos docker[21275]: TodoApp.js:117:        \
+// TODO scroll into view
+Mar 04 19:57:24 centos docker[21275]: TodoApp.js:176:        \
+if (i>=list.length()) { i=list.length()-1; } // TODO .length
+Mar 04 19:57:24 centos docker[21275]: local.html:30:    \
+<!-- TODO 2-split, 3-split -->
+Mar 04 19:57:24 centos docker[21275]: model/TodoList.js:29:        \
+// TODO one op - repeated spec? long spec?
+Mar 04 19:57:24 centos docker[21275]: view/Footer.jsx:61:        \
+// TODO: show the entry's metadata
+Mar 04 19:57:24 centos docker[21275]: view/Footer.jsx:80:        \
+todoList.addObject(new TodoItem()); // TODO create default
+Mar 04 19:57:24 centos docker[21275]: view/Header.jsx:25:        \
+// TODO list some meaningful header (apart from the id)
+Mar 04 19:57:24 centos docker[21275]: > todomvc-swarm@0.0.1 start /todo
+Mar 04 19:57:24 centos docker[21275]: > node TodoAppServer.js
+Mar 04 19:57:25 centos docker[21275]: Swarm server started port 8000

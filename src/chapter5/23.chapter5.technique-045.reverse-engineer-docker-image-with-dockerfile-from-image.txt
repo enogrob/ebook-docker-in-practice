@@ -1,0 +1,20 @@
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock \
+  dockerinpractice/dockerfile-from-image reverseme
+FROM busybox:buildroot-2014.02
+MAINTAINER ian.miell@gmail.com
+ENV myenvname=myenvvalue
+WORKDIR /opt
+RUN mkdir -p copied
+COPY file:43a582585c738bb8fd3f03f29b18caaf3b0829d3ceb13956b3071c5f0befcbfc \
+in copied/Dockerfile
+RUN mkdir -p added
+ADD file:43a582585c738bb8fd3f03f29b18caaf3b0829d3ceb13956b3071c5f0befcbfc \
+in added/Dockerfile
+RUN touch /tmp/afile
+ADD \
+file:43a582585c738bb8fd3f03f29b18caaf3b0829d3ceb13956b3071c5f0befcbfc in /
+EXPOSE 80/tcp
+VOLUME [/data]
+ONBUILD touch /tmp/built
+ENTRYPOINT [/bin/sh -c /bin/bash]
+CMD [/bin/sh -c -r]

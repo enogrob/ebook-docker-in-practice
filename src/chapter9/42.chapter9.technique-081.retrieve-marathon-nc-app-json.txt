@@ -1,0 +1,9 @@
+$ curl http://localhost:8080/v2/apps/marathon-nc/versions
+{"versions":["2015-06-30T19:52:44.649Z"]}
+$ curl -s \
+http://localhost:8080/v2/apps/marathon-nc/versions/2015-06-30T19:52:44.649Z \
+> app.json
+$ cat app.json
+{"id":"/marathon-nc", "cmd":"echo \"hello $MESOS_TASK_ID\" | nc -l $PORT0",[...]
+$ curl http://172.17.0.3:8000
+hello marathon-nc.f56f140e-19e9-11e5-a44d-0242ac110012
