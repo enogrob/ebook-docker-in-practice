@@ -1,5 +1,9 @@
+docker build .
+docker images
+docker tag 6cc3b1eca1bc todoapp
+
 Sending build context to Docker daemon 178.7 kB
-Sending build context to Docker daemon 
+Sending build context to Docker daemon
 Step 0 : FROM node
  ---> fc81e574af43
 Step 1 : MAINTAINER ian.miell@gmail.com
@@ -19,7 +23,7 @@ Step 4 : RUN npm install
  ---> Running in bdf07a308fca
 npm info it worked if it ends with ok
 [...]
-npm info ok 
+npm info ok
  ---> 6cf8f3633306
 Removing intermediate container bdf07a308fca
 Step 5 : RUN chmod -R 777 /todo

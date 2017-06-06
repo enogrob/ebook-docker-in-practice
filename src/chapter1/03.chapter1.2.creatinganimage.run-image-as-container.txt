@@ -1,4 +1,6 @@
-docker run -p 8000:8000 --name example1 todoapp
+docker run -p 8000:8000 --name example1 -it --rm -d todoapp
+docker ps
+
 npm install
 npm info it worked if it ends with ok
 npm info using npm@2.14.4
@@ -25,7 +27,7 @@ npm info linkStuff todomvc-swarm@0.0.1
 npm info install todomvc-swarm@0.0.1
 npm info postinstall todomvc-swarm@0.0.1
 npm info prepublish todomvc-swarm@0.0.1
-npm info ok 
+npm info ok
 if [ ! -e dist/ ]; then mkdir dist; fi
 cp node_modules/react/dist/react.min.js dist/react.min.js
 
