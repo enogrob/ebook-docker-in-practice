@@ -27,7 +27,7 @@ PART 2: DOCKER AND DEVELOPMENT
 PART 3: DOCKER AND DEVOPS
 CONTINUOUS INTEGRATION: SPEEDING UP YOUR DEVELOPMENT PIPELINE
 [x] 6.1 Docker Hub automated builds
-[ ] 6.2 More efficient builds
+[x] 6.2 More efficient builds
 [ ] 6.3 Containerizing your CI process
 [ ] 6.4 Summary
 CONTINUOUS DELIVERY: A PERFECT FIT FOR DOCKER PRINCIPLES
